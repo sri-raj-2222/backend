@@ -188,7 +188,7 @@ app.get('/api/recommendations/:userId', async (req, res) => {
 
     if (potentialMatches.length === 0) return res.json([]);
 
-    if (process.env.GEMINI_API_KEY && process.env.GEMINI_API_KEY !== "") {
+    if (xaiClient) {
       const prompt = `
         User A is offering: ${JSON.stringify(userTasks.map(t => ({ title: t.title, offering: t.offering, wanting: t.wanting })))}
         Potential matches: ${JSON.stringify(potentialMatches.map(t => ({ id: t.id, title: t.title, offering: t.offering, wanting: t.wanting })))}
@@ -198,8 +198,7 @@ app.get('/api/recommendations/:userId', async (req, res) => {
         Only return the JSON.
       `;
       try {
-        const result = await model.generateContent(prompt);
-        const text = result.response.text();
+        const text = await xaiGenerate(prompt);
         const jsonMatch = text.match(/\[.*\]/s);
         if (jsonMatch) {
           const aiMatches = JSON.parse(jsonMatch[0]);
@@ -210,7 +209,7 @@ app.get('/api/recommendations/:userId', async (req, res) => {
           return res.json(finalMatches);
         }
       } catch (e) {
-        console.error("Gemini Error:", e);
+        console.error("AI Recommendation Error:", e);
       }
     }
 
@@ -225,7 +224,7 @@ app.post('/api/tasks', async (req, res) => {
   const { title, description, offering, wanting, type, duration, schedule, posted_by, userName, userAvatar } = req.body;
   try {
     let ai_metadata = null;
-    if (process.env.GEMINI_API_KEY) {
+    if (xaiClient) {
       try {
         const prompt = `
           Analyze this skill exchange task on Share Sphere.
@@ -237,8 +236,7 @@ app.post('/api/tasks', async (req, res) => {
           and a short "target_peer_profile" (who would be the perfect match).
           Return ONLY valid JSON: {"analysis": "...", "target_peer": "..."}
         `;
-        const result = await model.generateContent(prompt);
-        const text = result.response.text();
+        const text = await xaiGenerate(prompt);
         const jsonMatch = text.match(/\{.*\}/s);
         if (jsonMatch) ai_metadata = JSON.parse(jsonMatch[0]);
       } catch (aiErr) {
