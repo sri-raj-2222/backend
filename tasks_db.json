@@ -1,0 +1,2326 @@
+{
+  "tasks": [
+    {
+      "id": "8016fb70-068b-4b78-8acb-df0c32745cdb",
+      "title": "Learning Python",
+      "description": "Looking for help with Python. I can offer Java in exchange.",
+      "offering": [
+        "Java"
+      ],
+      "wanting": [
+        "Python"
+      ],
+      "type": "direct",
+      "duration": "1 hour",
+      "schedule": "Anytime",
+      "status": "open",
+      "posted_by": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+      "user": {
+        "name": "ram",
+        "avatar_url": null
+      },
+      "ai_metadata": null,
+      "created_at": "2026-05-11T08:52:03.222Z"
+    },
+    {
+      "id": "fc64bd5a-5aef-4bfd-b496-6d3596c5eb83",
+      "title": "Learning Java",
+      "description": "Looking for help with Java. I can offer Python in exchange.",
+      "offering": [
+        "Python"
+      ],
+      "wanting": [
+        "Java"
+      ],
+      "type": "direct",
+      "duration": "1 hour",
+      "schedule": "Anytime",
+      "status": "open",
+      "posted_by": "27ae6dbf-9467-4de4-b96c-03e2ee8311f2",
+      "user": {
+        "name": "chintu",
+        "avatar_url": null
+      },
+      "ai_metadata": null,
+      "created_at": "2026-05-11T08:51:09.919Z"
+    },
+    {
+      "id": "648fabbf-5790-4bbf-a05d-45281c56cfe8",
+      "title": "Learning Java",
+      "description": "Looking for help with Java. I can offer Python in exchange.",
+      "offering": [
+        "Python"
+      ],
+      "wanting": [
+        "Java"
+      ],
+      "type": "direct",
+      "duration": "1 hour",
+      "schedule": "Anytime",
+      "status": "open",
+      "posted_by": "27ae6dbf-9467-4de4-b96c-03e2ee8311f2",
+      "user": {
+        "name": "chintu",
+        "avatar_url": null
+      },
+      "ai_metadata": null,
+      "created_at": "2026-05-11T08:51:06.597Z"
+    },
+    {
+      "id": "d3987eae-4113-4e2b-bf74-602db36c0277",
+      "title": "Learning python",
+      "description": "I am looking for someone to help me with python. In exchange, I can offer Graphic Design.",
+      "offering": [
+        "Graphic Design"
+      ],
+      "wanting": [
+        "python"
+      ],
+      "type": "direct",
+      "duration": "1 hour",
+      "schedule": "Anytime",
+      "status": "open",
+      "posted_by": "4848a388-617c-4a20-92d2-31b35b68f795",
+      "user": {
+        "name": "raj",
+        "avatar_url": null
+      },
+      "created_at": "2026-05-08T16:41:28.807212+00:00"
+    },
+    {
+      "id": "fba8c975-aad3-4ab2-9430-b4a0552ee6f7",
+      "title": "Learning java",
+      "description": "I am looking for someone to help me with java. In exchange, I can offer Graphic Design.",
+      "offering": [
+        "Graphic Design"
+      ],
+      "wanting": [
+        "java"
+      ],
+      "type": "direct",
+      "duration": "1 hour",
+      "schedule": "Anytime",
+      "status": "open",
+      "posted_by": "4848a388-617c-4a20-92d2-31b35b68f795",
+      "user": {
+        "name": "raj",
+        "avatar_url": null
+      },
+      "created_at": "2026-05-08T16:47:06.049447+00:00"
+    },
+    {
+      "id": "16ca3647-2706-4a60-acc4-f074cbff58ca",
+      "title": "Learning Graphic Design",
+      "description": "I am looking for someone to help me with Graphic Design. In exchange, I can offer Python.",
+      "offering": [
+        "Python"
+      ],
+      "wanting": [
+        "Graphic Design"
+      ],
+      "type": "direct",
+      "duration": "1 hour",
+      "schedule": "Anytime",
+      "status": "open",
+      "posted_by": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+      "user": {
+        "name": "ram",
+        "avatar_url": null
+      },
+      "created_at": "2026-05-08T16:55:11.567881+00:00"
+    },
+    {
+      "id": "f51926f1-727f-48b0-b13a-b280270c19ba",
+      "title": "Learning Operating System",
+      "description": "I am looking for someone to help me with Operating System. In exchange, I can offer Python.",
+      "offering": [
+        "Python"
+      ],
+      "wanting": [
+        "Operating System"
+      ],
+      "type": "direct",
+      "duration": "1 hour",
+      "schedule": "Anytime",
+      "status": "open",
+      "posted_by": "4848a388-617c-4a20-92d2-31b35b68f795",
+      "user": {
+        "name": "raj",
+        "avatar_url": null
+      },
+      "created_at": "2026-05-08T19:03:44.988971+00:00"
+    },
+    {
+      "id": "3f463cf9-0aa0-4f64-a355-1b46775964ed",
+      "title": "Learning Python",
+      "description": "I am looking for someone to help me with Python. In exchange, I can offer Tailwind CSS.",
+      "offering": [
+        "Tailwind CSS"
+      ],
+      "wanting": [
+        "Python"
+      ],
+      "type": "direct",
+      "duration": "1 hour",
+      "schedule": "Anytime",
+      "status": "open",
+      "posted_by": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+      "user": {
+        "name": "ram",
+        "avatar_url": null
+      },
+      "created_at": "2026-05-08T19:05:17.960224+00:00"
+    },
+    {
+      "id": "6917276d-19bc-45f1-b4e9-590515f23ccc",
+      "title": "Learning Tailwind CSS",
+      "description": "I am looking for someone to help me with Tailwind CSS. In exchange, I can offer Python.",
+      "offering": [
+        "Python"
+      ],
+      "wanting": [
+        "Tailwind CSS"
+      ],
+      "type": "direct",
+      "duration": "1 hour",
+      "schedule": "Anytime",
+      "status": "open",
+      "posted_by": "4848a388-617c-4a20-92d2-31b35b68f795",
+      "user": {
+        "name": "raj",
+        "avatar_url": null
+      },
+      "created_at": "2026-05-08T19:06:01.642221+00:00"
+    },
+    {
+      "id": "4e041e5f-e977-417e-95d6-89d719efc797",
+      "title": "Learning Linux",
+      "description": "I am looking for someone to help me with Linux. In exchange, I can offer TypeScript.",
+      "offering": [
+        "TypeScript"
+      ],
+      "wanting": [
+        "Linux"
+      ],
+      "type": "direct",
+      "duration": "1 hour",
+      "schedule": "Anytime",
+      "status": "open",
+      "posted_by": "4848a388-617c-4a20-92d2-31b35b68f795",
+      "user": {
+        "name": "raj",
+        "avatar_url": null
+      },
+      "created_at": "2026-05-08T19:54:10.135488+00:00"
+    },
+    {
+      "id": "15d6515b-28e1-4c97-adf8-e44b38e1958e",
+      "title": "Learning TypeScript",
+      "description": "I am looking for someone to help me with TypeScript. In exchange, I can offer Linux.",
+      "offering": [
+        "Linux"
+      ],
+      "wanting": [
+        "TypeScript"
+      ],
+      "type": "direct",
+      "duration": "1 hour",
+      "schedule": "Anytime",
+      "status": "open",
+      "posted_by": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+      "user": {
+        "name": "ram",
+        "avatar_url": null
+      },
+      "created_at": "2026-05-08T19:55:19.923515+00:00"
+    },
+    {
+      "id": "4e5e1dae-49cf-4786-bf41-fe8a620f6711",
+      "title": "Learning video editing",
+      "description": "I am looking for someone to help me with video editing. In exchange, I can offer UI Design.",
+      "offering": [
+        "UI Design"
+      ],
+      "wanting": [
+        "video editing"
+      ],
+      "type": "direct",
+      "duration": "1 hour",
+      "schedule": "Anytime",
+      "status": "open",
+      "posted_by": "4848a388-617c-4a20-92d2-31b35b68f795",
+      "user": {
+        "name": "raj",
+        "avatar_url": null
+      },
+      "created_at": "2026-05-09T02:28:56.692104+00:00"
+    },
+    {
+      "id": "9249fc3a-2d14-470d-95c7-1f83c22934d6",
+      "title": "Learning UI deisgn",
+      "description": "I am looking for someone to help me with UI deisgn. In exchange, I can offer Video Editing.",
+      "offering": [
+        "Video Editing"
+      ],
+      "wanting": [
+        "UI deisgn"
+      ],
+      "type": "direct",
+      "duration": "1 hour",
+      "schedule": "Anytime",
+      "status": "open",
+      "posted_by": "4848a388-617c-4a20-92d2-31b35b68f795",
+      "user": {
+        "name": "raj",
+        "avatar_url": null
+      },
+      "created_at": "2026-05-09T02:30:35.402231+00:00"
+    },
+    {
+      "id": "d9c4787e-5e74-4e72-b23f-011cf12129cf",
+      "title": "Learning Java",
+      "description": "I am looking for someone to help me with Java. In exchange, I can offer Python.",
+      "offering": [
+        "Python"
+      ],
+      "wanting": [
+        "Java"
+      ],
+      "type": "direct",
+      "duration": "1 hour",
+      "schedule": "Anytime",
+      "status": "open",
+      "posted_by": "4848a388-617c-4a20-92d2-31b35b68f795",
+      "user": {
+        "name": "raj",
+        "avatar_url": null
+      },
+      "created_at": "2026-05-09T02:32:03.057155+00:00"
+    },
+    {
+      "id": "38efb76a-7e5d-49fa-8eef-b9c2aea199e3",
+      "title": "Learning Python",
+      "description": "I am looking for someone to help me with Python. In exchange, I can offer Java.",
+      "offering": [
+        "Java"
+      ],
+      "wanting": [
+        "Python"
+      ],
+      "type": "direct",
+      "duration": "1 hour",
+      "schedule": "Anytime",
+      "status": "open",
+      "posted_by": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+      "user": {
+        "name": "ram",
+        "avatar_url": null
+      },
+      "created_at": "2026-05-09T02:33:40.387835+00:00"
+    },
+    {
+      "id": "a99c6e26-6267-4fe2-a814-076bf7a2dbc8",
+      "title": "Learning UI Design",
+      "description": "I am looking for someone to help me with UI Design. In exchange, I can offer Tailwind CSS.",
+      "offering": [
+        "Tailwind CSS"
+      ],
+      "wanting": [
+        "UI Design"
+      ],
+      "type": "direct",
+      "duration": "1 hour",
+      "schedule": "Anytime",
+      "status": "open",
+      "posted_by": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+      "user": {
+        "name": "ram",
+        "avatar_url": null
+      },
+      "created_at": "2026-05-09T03:15:07.588943+00:00"
+    },
+    {
+      "id": "73cb9dd5-d604-4741-86a0-2a3b7c45d176",
+      "title": "Learning Node.js",
+      "description": "I am looking for someone to help me with Node.js. In exchange, I can offer Tailwind CSS.",
+      "offering": [
+        "Tailwind CSS"
+      ],
+      "wanting": [
+        "Node.js"
+      ],
+      "type": "direct",
+      "duration": "1 hour",
+      "schedule": "Anytime",
+      "status": "open",
+      "posted_by": "9c1e2495-2ceb-49fe-93c3-ca9a74b94629",
+      "user": {
+        "name": "Rajjjjjjjj",
+        "avatar_url": null
+      },
+      "created_at": "2026-05-09T05:56:56.852134+00:00"
+    },
+    {
+      "id": "e6ec134f-2058-4ecf-9905-e0483e866772",
+      "title": "Learning Tailwind CSS",
+      "description": "I am looking for someone to help me with Tailwind CSS. In exchange, I can offer Node.js.",
+      "offering": [
+        "Node.js"
+      ],
+      "wanting": [
+        "Tailwind CSS"
+      ],
+      "type": "direct",
+      "duration": "1 hour",
+      "schedule": "Anytime",
+      "status": "open",
+      "posted_by": "7a911030-a7a5-4725-87bd-4cf9b5c8d3c6",
+      "user": {
+        "name": "Naidu",
+        "avatar_url": null
+      },
+      "created_at": "2026-05-09T05:56:58.586431+00:00"
+    },
+    {
+      "id": "9e365a8c-d7ba-4a4d-9cd6-bef4ac24b4d9",
+      "title": "Learning SCU",
+      "description": "I am looking for someone to help me with SCU. In exchange, I can offer Node.js.",
+      "offering": [
+        "Node.js"
+      ],
+      "wanting": [
+        "SCU"
+      ],
+      "type": "direct",
+      "duration": "1 hour",
+      "schedule": "Anytime",
+      "status": "open",
+      "posted_by": "72c65180-ce5b-4fd2-868d-675ba60a8e36",
+      "user": {
+        "name": "naidu_gorripaati ",
+        "avatar_url": null
+      },
+      "created_at": "2026-05-09T06:36:55.626197+00:00"
+    },
+    {
+      "id": "88611533-26e9-4014-8530-cc928892964f",
+      "title": "Learning SEO",
+      "description": "I am looking for someone to help me with SEO. In exchange, I can offer Node.js.",
+      "offering": [
+        "Node.js"
+      ],
+      "wanting": [
+        "SEO"
+      ],
+      "type": "direct",
+      "duration": "1 hour",
+      "schedule": "Anytime",
+      "status": "open",
+      "posted_by": "72c65180-ce5b-4fd2-868d-675ba60a8e36",
+      "user": {
+        "name": "naidu_gorripaati ",
+        "avatar_url": null
+      },
+      "created_at": "2026-05-09T06:38:03.052384+00:00"
+    },
+    {
+      "id": "a50e8571-51e3-4c61-b03e-aeebe7a155e5",
+      "title": "Learning Node.js",
+      "description": "I am looking for someone to help me with Node.js. In exchange, I can offer SEO.",
+      "offering": [
+        "SEO"
+      ],
+      "wanting": [
+        "Node.js"
+      ],
+      "type": "direct",
+      "duration": "1 hour",
+      "schedule": "Anytime",
+      "status": "open",
+      "posted_by": "b28d5021-c3d2-477d-99d4-e8475943f4d4",
+      "user": {
+        "name": "SRI RAM",
+        "avatar_url": null
+      },
+      "created_at": "2026-05-09T06:38:09.558876+00:00"
+    },
+    {
+      "id": "876c6420-4dbb-4be0-97d3-35a8cb8a82e4",
+      "title": "Learning Python",
+      "description": "I am looking for someone to help me with Python. In exchange, I can offer React.",
+      "offering": [
+        "React"
+      ],
+      "wanting": [
+        "Python"
+      ],
+      "type": "direct",
+      "duration": "1 hour",
+      "schedule": "Anytime",
+      "status": "open",
+      "posted_by": "72c65180-ce5b-4fd2-868d-675ba60a8e36",
+      "user": {
+        "name": "naidu_gorripaati ",
+        "avatar_url": null
+      },
+      "created_at": "2026-05-09T06:38:34.093441+00:00"
+    },
+    {
+      "id": "917d6fbe-4237-4b55-bbd1-37d71fec3a5d",
+      "title": "Learning Node.js",
+      "description": "I am looking for someone to help me with Node.js. In exchange, I can offer SEO.",
+      "offering": [
+        "SEO"
+      ],
+      "wanting": [
+        "Node.js"
+      ],
+      "type": "direct",
+      "duration": "1 hour",
+      "schedule": "Anytime",
+      "status": "open",
+      "posted_by": "b28d5021-c3d2-477d-99d4-e8475943f4d4",
+      "user": {
+        "name": "SRI RAM",
+        "avatar_url": null
+      },
+      "created_at": "2026-05-09T06:38:44.798042+00:00"
+    },
+    {
+      "id": "311834ac-f566-49b7-a7db-e40bb28ac774",
+      "title": "Learning Python",
+      "description": "I am looking for someone to help me with Python. In exchange, I can offer Graphic Design.",
+      "offering": [
+        "Graphic Design"
+      ],
+      "wanting": [
+        "Python"
+      ],
+      "type": "direct",
+      "duration": "1 hour",
+      "schedule": "Anytime",
+      "status": "open",
+      "posted_by": "b28d5021-c3d2-477d-99d4-e8475943f4d4",
+      "user": {
+        "name": "SRI RAM",
+        "avatar_url": null
+      },
+      "created_at": "2026-05-09T06:39:26.480571+00:00"
+    },
+    {
+      "id": "8779012f-3edd-43af-a886-1877ae16f80d",
+      "title": "Learning Video Editing",
+      "description": "I am looking for someone to help me with Video Editing. In exchange, I can offer Figma.",
+      "offering": [
+        "Figma"
+      ],
+      "wanting": [
+        "Video Editing"
+      ],
+      "type": "direct",
+      "duration": "1 hour",
+      "schedule": "Anytime",
+      "status": "open",
+      "posted_by": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+      "user": {
+        "name": "ram",
+        "avatar_url": null
+      },
+      "created_at": "2026-05-09T06:40:02.313533+00:00"
+    },
+    {
+      "id": "8c201ea4-c670-4b18-941c-688f46c38e3a",
+      "title": "Learning Java",
+      "description": "I am looking for someone to help me with Java. In exchange, I can offer Content Writing.",
+      "offering": [
+        "Content Writing"
+      ],
+      "wanting": [
+        "Java"
+      ],
+      "type": "direct",
+      "duration": "1 hour",
+      "schedule": "Anytime",
+      "status": "open",
+      "posted_by": "b28d5021-c3d2-477d-99d4-e8475943f4d4",
+      "user": {
+        "name": "SRI RAM",
+        "avatar_url": null
+      },
+      "created_at": "2026-05-09T09:28:55.858449+00:00"
+    },
+    {
+      "id": "87894d16-5b8e-49e4-848b-5748e08534f3",
+      "title": "Learning Java",
+      "description": "I am looking for someone to help me with Java. In exchange, I can offer Tailwind CSS.",
+      "offering": [
+        "Tailwind CSS"
+      ],
+      "wanting": [
+        "Java"
+      ],
+      "type": "direct",
+      "duration": "1 hour",
+      "schedule": "Anytime",
+      "status": "open",
+      "posted_by": "9c1e2495-2ceb-49fe-93c3-ca9a74b94629",
+      "user": {
+        "name": "Rajjjjjjjj",
+        "avatar_url": null
+      },
+      "created_at": "2026-05-09T09:40:07.657163+00:00"
+    },
+    {
+      "id": "885af26c-0206-4cc6-8394-a2fa6b3e712a",
+      "title": "Learning SEO",
+      "description": "I am looking for someone to help me with SEO. In exchange, I can offer Tailwind CSS.",
+      "offering": [
+        "Tailwind CSS"
+      ],
+      "wanting": [
+        "SEO"
+      ],
+      "type": "direct",
+      "duration": "1 hour",
+      "schedule": "Anytime",
+      "status": "open",
+      "posted_by": "9c1e2495-2ceb-49fe-93c3-ca9a74b94629",
+      "user": {
+        "name": "Rajjjjjjjj",
+        "avatar_url": null
+      },
+      "created_at": "2026-05-09T09:43:05.795588+00:00"
+    },
+    {
+      "id": "78e125d5-f685-4de2-b2a4-cba245cc67f3",
+      "title": "Learning UI Design",
+      "description": "I am looking for someone to help me with UI Design. In exchange, I can offer Java.",
+      "offering": [
+        "Java"
+      ],
+      "wanting": [
+        "UI Design"
+      ],
+      "type": "direct",
+      "duration": "1 hour",
+      "schedule": "Anytime",
+      "status": "open",
+      "posted_by": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+      "user": {
+        "name": "ram",
+        "avatar_url": null
+      },
+      "created_at": "2026-05-09T10:12:23.46804+00:00"
+    },
+    {
+      "id": "abae849b-3ccd-42a8-924e-cd7d5d65da7b",
+      "title": "Learning Ui Design",
+      "description": "I am looking for someone to help me with Ui Design. In exchange, I can offer Graphic Design.",
+      "offering": [
+        "Graphic Design"
+      ],
+      "wanting": [
+        "Ui Design"
+      ],
+      "type": "direct",
+      "duration": "1 hour",
+      "schedule": "Anytime",
+      "status": "open",
+      "posted_by": "4848a388-617c-4a20-92d2-31b35b68f795",
+      "user": {
+        "name": "raj",
+        "avatar_url": null
+      },
+      "created_at": "2026-05-09T15:06:41.917803+00:00"
+    },
+    {
+      "id": "8083150d-65b4-4e85-aaf7-2008170bf52b",
+      "title": "Learning ui design",
+      "description": "I am looking for someone to help me with ui design. In exchange, I can offer Graphic Design.",
+      "offering": [
+        "Graphic Design"
+      ],
+      "wanting": [
+        "ui design"
+      ],
+      "type": "direct",
+      "duration": "1 hour",
+      "schedule": "Anytime",
+      "status": "open",
+      "posted_by": "4848a388-617c-4a20-92d2-31b35b68f795",
+      "user": {
+        "name": "raj",
+        "avatar_url": null
+      },
+      "created_at": "2026-05-09T15:22:29.880038+00:00"
+    },
+    {
+      "id": "e1d47476-32ea-47bd-b29a-82c6438c57ca",
+      "title": "Learning video editing",
+      "description": "I am looking for someone to help me with video editing. In exchange, I can offer Graphic Design.",
+      "offering": [
+        "Graphic Design"
+      ],
+      "wanting": [
+        "video editing"
+      ],
+      "type": "direct",
+      "duration": "1 hour",
+      "schedule": "Anytime",
+      "status": "open",
+      "posted_by": "4848a388-617c-4a20-92d2-31b35b68f795",
+      "user": {
+        "name": "raj",
+        "avatar_url": null
+      },
+      "created_at": "2026-05-09T16:51:30.923618+00:00"
+    },
+    {
+      "id": "c2b5fd49-c4df-44ea-a87f-4f1856a4bc2a",
+      "title": "Learning UI Design",
+      "description": "I am looking for someone to help me with UI Design. In exchange, I can offer TypeScript.",
+      "offering": [
+        "TypeScript"
+      ],
+      "wanting": [
+        "UI Design"
+      ],
+      "type": "direct",
+      "duration": "1 hour",
+      "schedule": "Anytime",
+      "status": "open",
+      "posted_by": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+      "user": {
+        "name": "ram",
+        "avatar_url": null
+      },
+      "created_at": "2026-05-09T16:53:51.114102+00:00"
+    },
+    {
+      "id": "08234db8-24fd-4901-b9c7-cc65f3670a54",
+      "title": "Learning Graphic Design",
+      "description": "I am looking for someone to help me with Graphic Design. In exchange, I can offer UI Design.",
+      "offering": [
+        "UI Design"
+      ],
+      "wanting": [
+        "Graphic Design"
+      ],
+      "type": "direct",
+      "duration": "1 hour",
+      "schedule": "Anytime",
+      "status": "open",
+      "posted_by": "4848a388-617c-4a20-92d2-31b35b68f795",
+      "user": {
+        "name": "raj",
+        "avatar_url": null
+      },
+      "created_at": "2026-05-09T16:54:25.843006+00:00"
+    },
+    {
+      "id": "34766914-0567-4c60-b65d-ff96dec14985",
+      "title": "Learning Video Editing",
+      "description": "I am looking for someone to help me with Video Editing. In exchange, I can offer Python.",
+      "offering": [
+        "Python"
+      ],
+      "wanting": [
+        "Video Editing"
+      ],
+      "type": "direct",
+      "duration": "1 hour",
+      "schedule": "Anytime",
+      "status": "open",
+      "posted_by": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+      "user": {
+        "name": "ram",
+        "avatar_url": null
+      },
+      "created_at": "2026-05-09T20:14:05.958725+00:00"
+    },
+    {
+      "id": "1381e10f-06d4-4861-83fb-476278592821",
+      "title": "Learning Python",
+      "description": "I am looking for someone to help me with Python. In exchange, I can offer Video Editing.",
+      "offering": [
+        "Video Editing"
+      ],
+      "wanting": [
+        "Python"
+      ],
+      "type": "direct",
+      "duration": "1 hour",
+      "schedule": "Anytime",
+      "status": "open",
+      "posted_by": "4848a388-617c-4a20-92d2-31b35b68f795",
+      "user": {
+        "name": "raj",
+        "avatar_url": null
+      },
+      "created_at": "2026-05-09T20:14:43.579291+00:00"
+    },
+    {
+      "id": "984cca2e-0d7a-4ea0-a6a1-63ffedbbd06a",
+      "title": "Learning Java",
+      "description": "I am looking for someone to help me with Java. In exchange, I can offer Graphic Design.",
+      "offering": [
+        "Graphic Design"
+      ],
+      "wanting": [
+        "Java"
+      ],
+      "type": "direct",
+      "duration": "1 hour",
+      "schedule": "Anytime",
+      "status": "open",
+      "posted_by": "4848a388-617c-4a20-92d2-31b35b68f795",
+      "user": {
+        "name": "raj",
+        "avatar_url": null
+      },
+      "created_at": "2026-05-09T21:02:59.738602+00:00"
+    },
+    {
+      "id": "e1c8a9a6-7e44-4c24-9513-19ffbfbe629a",
+      "title": "Learning UI Design",
+      "description": "I am looking for someone to help me with UI Design. In exchange, I can offer Java.",
+      "offering": [
+        "Java"
+      ],
+      "wanting": [
+        "UI Design"
+      ],
+      "type": "direct",
+      "duration": "1 hour",
+      "schedule": "Anytime",
+      "status": "open",
+      "posted_by": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+      "user": {
+        "name": "ram",
+        "avatar_url": null
+      },
+      "created_at": "2026-05-09T21:23:10.887872+00:00"
+    },
+    {
+      "id": "1075e0c3-7803-4271-b17b-38e463ac7b66",
+      "title": "Learning Python",
+      "description": "I am looking for someone to help me with Python. In exchange, I can offer UI Design.",
+      "offering": [
+        "UI Design"
+      ],
+      "wanting": [
+        "Python"
+      ],
+      "type": "direct",
+      "duration": "1 hour",
+      "schedule": "Anytime",
+      "status": "open",
+      "posted_by": "4848a388-617c-4a20-92d2-31b35b68f795",
+      "user": {
+        "name": "raj",
+        "avatar_url": null
+      },
+      "created_at": "2026-05-09T21:24:01.05014+00:00"
+    },
+    {
+      "id": "9b74c0f2-0803-4240-9777-9ca04db49a52",
+      "title": "Learning C++",
+      "description": "I am looking for someone to help me with C++. In exchange, I can offer Graphic Design.",
+      "offering": [
+        "Graphic Design"
+      ],
+      "wanting": [
+        "C++"
+      ],
+      "type": "direct",
+      "duration": "1 hour",
+      "schedule": "Anytime",
+      "status": "open",
+      "posted_by": "4848a388-617c-4a20-92d2-31b35b68f795",
+      "user": {
+        "name": "raj",
+        "avatar_url": null
+      },
+      "created_at": "2026-05-10T05:35:28.202101+00:00"
+    },
+    {
+      "id": "cea8aca4-4699-4348-bcb4-793a515db099",
+      "title": "Learning Graphic Design",
+      "description": "I am looking for someone to help me with Graphic Design. In exchange, I can offer C++.",
+      "offering": [
+        "C++"
+      ],
+      "wanting": [
+        "Graphic Design"
+      ],
+      "type": "direct",
+      "duration": "1 hour",
+      "schedule": "Anytime",
+      "status": "open",
+      "posted_by": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+      "user": {
+        "name": "ram",
+        "avatar_url": null
+      },
+      "created_at": "2026-05-10T05:36:17.277103+00:00"
+    },
+    {
+      "id": "551433b2-a589-43e9-843f-9080c3b55434",
+      "title": "Learning UI Design",
+      "description": "I am looking for someone to help me with UI Design. In exchange, I can offer Graphic Design.",
+      "offering": [
+        "Graphic Design"
+      ],
+      "wanting": [
+        "UI Design"
+      ],
+      "type": "direct",
+      "duration": "1 hour",
+      "schedule": "Anytime",
+      "status": "open",
+      "posted_by": "4848a388-617c-4a20-92d2-31b35b68f795",
+      "user": {
+        "name": "raj",
+        "avatar_url": null
+      },
+      "created_at": "2026-05-10T11:17:09.909051+00:00"
+    },
+    {
+      "id": "a954de21-a458-4ba7-aaf2-cb7e886e64b5",
+      "title": "Learning Java",
+      "description": "I am looking for someone to help me with Java. In exchange, I can offer Swift.",
+      "offering": [
+        "Swift"
+      ],
+      "wanting": [
+        "Java"
+      ],
+      "type": "direct",
+      "duration": "1 hour",
+      "schedule": "Anytime",
+      "status": "open",
+      "posted_by": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+      "user": {
+        "name": "ram",
+        "avatar_url": null
+      },
+      "created_at": "2026-05-10T16:07:17.394929+00:00"
+    },
+    {
+      "id": "24891d19-c8a9-4594-a196-1103fe71067a",
+      "title": "Learning Swift",
+      "description": "I am looking for someone to help me with Swift. In exchange, I can offer Java.",
+      "offering": [
+        "Java"
+      ],
+      "wanting": [
+        "Swift"
+      ],
+      "type": "direct",
+      "duration": "1 hour",
+      "schedule": "Anytime",
+      "status": "open",
+      "posted_by": "4848a388-617c-4a20-92d2-31b35b68f795",
+      "user": {
+        "name": "raj",
+        "avatar_url": null
+      },
+      "created_at": "2026-05-10T16:07:50.470383+00:00"
+    },
+    {
+      "id": "447d31e4-f89e-4a61-a58d-35742e2e67c6",
+      "title": "Learning JavaScript",
+      "description": "I am looking for someone to help me with JavaScript. In exchange, I can offer Content Writing.",
+      "offering": [
+        "Content Writing"
+      ],
+      "wanting": [
+        "JavaScript"
+      ],
+      "type": "direct",
+      "duration": "1 hour",
+      "schedule": "Anytime",
+      "status": "open",
+      "posted_by": "4848a388-617c-4a20-92d2-31b35b68f795",
+      "user": {
+        "name": "raj",
+        "avatar_url": null
+      },
+      "created_at": "2026-05-10T17:11:57.289448+00:00"
+    },
+    {
+      "id": "4584ad27-b36a-4c29-a8fe-cac767707cf9",
+      "title": "Learning Content Writing",
+      "description": "I am looking for someone to help me with Content Writing. In exchange, I can offer JavaScript.",
+      "offering": [
+        "JavaScript"
+      ],
+      "wanting": [
+        "Content Writing"
+      ],
+      "type": "direct",
+      "duration": "1 hour",
+      "schedule": "Anytime",
+      "status": "open",
+      "posted_by": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+      "user": {
+        "name": "ram",
+        "avatar_url": null
+      },
+      "created_at": "2026-05-10T17:12:14.296983+00:00"
+    },
+    {
+      "id": "f2233928-97b7-4ed6-af5b-96b3006761b4",
+      "title": "Learning Video Editing",
+      "description": "I am looking for someone to help me with Video Editing. In exchange, I can offer Java.",
+      "offering": [
+        "Java"
+      ],
+      "wanting": [
+        "Video Editing"
+      ],
+      "type": "direct",
+      "duration": "1 hour",
+      "schedule": "Anytime",
+      "status": "open",
+      "posted_by": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+      "user": {
+        "name": "ram",
+        "avatar_url": null
+      },
+      "created_at": "2026-05-10T17:50:06.315097+00:00"
+    },
+    {
+      "id": "62cdb70f-5145-4ca1-8404-60609a7dd883",
+      "title": "Learning Java",
+      "description": "I am looking for someone to help me with Java. In exchange, I can offer Video Editing.",
+      "offering": [
+        "Video Editing"
+      ],
+      "wanting": [
+        "Java"
+      ],
+      "type": "direct",
+      "duration": "1 hour",
+      "schedule": "Anytime",
+      "status": "open",
+      "posted_by": "4848a388-617c-4a20-92d2-31b35b68f795",
+      "user": {
+        "name": "raj",
+        "avatar_url": null
+      },
+      "created_at": "2026-05-10T17:51:10.89481+00:00"
+    },
+    {
+      "id": "90b25bed-9dd9-43fd-a16e-332f3c036e0b",
+      "title": "Learning Python",
+      "description": "Looking for help with Python. I can offer Java in exchange.",
+      "offering": [
+        "Java"
+      ],
+      "wanting": [
+        "Python"
+      ],
+      "type": "direct",
+      "duration": "1 hour",
+      "schedule": "Anytime",
+      "status": "open",
+      "posted_by": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+      "user": {
+        "name": "ram",
+        "avatar_url": null
+      },
+      "created_at": "2026-05-11T08:52:04.00599+00:00"
+    },
+    {
+      "id": "7042eb77-b982-4b98-8edb-3de0143e49e7",
+      "title": "Learning Java",
+      "description": "I am looking for someone to help me with Java. In exchange, I can offer UX Design.",
+      "offering": [
+        "UX Design"
+      ],
+      "wanting": [
+        "Java"
+      ],
+      "type": "direct",
+      "duration": "1 hour",
+      "schedule": "Anytime",
+      "status": "open",
+      "posted_by": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+      "user": {
+        "name": "ram",
+        "avatar_url": null
+      },
+      "created_at": "2026-05-11T08:52:04.841656+00:00"
+    },
+    {
+      "id": "4c14440e-27e2-4fef-8b80-84bc9423f501",
+      "title": "Learning UX Design",
+      "description": "I am looking for someone to help me with UX Design. In exchange, I can offer Java.",
+      "offering": [
+        "Java"
+      ],
+      "wanting": [
+        "UX Design"
+      ],
+      "type": "direct",
+      "duration": "1 hour",
+      "schedule": "Anytime",
+      "status": "open",
+      "posted_by": "4848a388-617c-4a20-92d2-31b35b68f795",
+      "user": {
+        "name": "raj",
+        "avatar_url": null
+      },
+      "created_at": "2026-05-11T08:52:52.463853+00:00"
+    }
+  ],
+  "requests": [
+    {
+      "id": "86941262-fa81-4c00-a182-0b41db34f08e",
+      "task_id": null,
+      "target_user_id": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+      "requested_by": "27ae6dbf-9467-4de4-b96c-03e2ee8311f2",
+      "message": "chintu wants to exchange Python for your Learning Python",
+      "status": "declined",
+      "requester": {
+        "name": "chintu",
+        "avatar_url": null
+      },
+      "owner": {
+        "name": "ram",
+        "avatar_url": null
+      },
+      "task": {
+        "id": null,
+        "title": "Learning Python",
+        "posted_by": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+        "offering": "Python",
+        "wanting": "Java"
+      },
+      "created_at": "2026-05-11T09:02:31.955Z"
+    },
+    {
+      "id": "9e618fb3-4113-453e-bf3b-40a3ad50c8dd",
+      "task_id": null,
+      "requested_by": "4848a388-617c-4a20-92d2-31b35b68f795",
+      "target_user_id": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+      "status": "active",
+      "message": "",
+      "requester": {
+        "name": "raj",
+        "avatar_url": null
+      },
+      "owner": {
+        "name": "ram",
+        "avatar_url": null
+      },
+      "task": {
+        "id": null,
+        "title": "Skill Exchange",
+        "posted_by": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+        "offering": "",
+        "wanting": ""
+      },
+      "created_at": "2026-05-08T19:40:31.751997+00:00"
+    },
+    {
+      "id": "f9997e29-a08a-4543-a845-6d00ac8e3d69",
+      "task_id": null,
+      "requested_by": "4848a388-617c-4a20-92d2-31b35b68f795",
+      "target_user_id": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+      "status": "active",
+      "message": "",
+      "requester": {
+        "name": "raj",
+        "avatar_url": null
+      },
+      "owner": {
+        "name": "ram",
+        "avatar_url": null
+      },
+      "task": {
+        "id": null,
+        "title": "Skill Exchange",
+        "posted_by": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+        "offering": "",
+        "wanting": ""
+      },
+      "created_at": "2026-05-08T19:40:30.831171+00:00"
+    },
+    {
+      "id": "9bdb0b1c-f882-4822-a5ac-9c5b48343440",
+      "task_id": null,
+      "requested_by": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+      "target_user_id": "4848a388-617c-4a20-92d2-31b35b68f795",
+      "status": "active",
+      "message": "",
+      "requester": {
+        "name": "ram",
+        "avatar_url": null
+      },
+      "owner": {
+        "name": "raj",
+        "avatar_url": null
+      },
+      "task": {
+        "id": null,
+        "title": "Skill Exchange",
+        "posted_by": "4848a388-617c-4a20-92d2-31b35b68f795",
+        "offering": "",
+        "wanting": ""
+      },
+      "created_at": "2026-05-08T19:55:28.268242+00:00"
+    },
+    {
+      "id": "44ece58a-eb40-4d8b-958b-1e3687f277fc",
+      "task_id": null,
+      "requested_by": "7a911030-a7a5-4725-87bd-4cf9b5c8d3c6",
+      "target_user_id": "9c1e2495-2ceb-49fe-93c3-ca9a74b94629",
+      "status": "active",
+      "message": "",
+      "requester": {
+        "name": "Naidu",
+        "avatar_url": null
+      },
+      "owner": {
+        "name": "Rajjjjjjjj",
+        "avatar_url": null
+      },
+      "task": {
+        "id": null,
+        "title": "Skill Exchange",
+        "posted_by": "9c1e2495-2ceb-49fe-93c3-ca9a74b94629",
+        "offering": "",
+        "wanting": ""
+      },
+      "created_at": "2026-05-09T05:57:15.049932+00:00"
+    },
+    {
+      "id": "4e9300a2-8ba1-4313-b609-31daaa54f3b3",
+      "task_id": null,
+      "requested_by": "9c1e2495-2ceb-49fe-93c3-ca9a74b94629",
+      "target_user_id": "7a911030-a7a5-4725-87bd-4cf9b5c8d3c6",
+      "status": "active",
+      "message": "",
+      "requester": {
+        "name": "Rajjjjjjjj",
+        "avatar_url": null
+      },
+      "owner": {
+        "name": "Naidu",
+        "avatar_url": null
+      },
+      "task": {
+        "id": null,
+        "title": "Skill Exchange",
+        "posted_by": "7a911030-a7a5-4725-87bd-4cf9b5c8d3c6",
+        "offering": "",
+        "wanting": ""
+      },
+      "created_at": "2026-05-09T05:57:08.385156+00:00"
+    },
+    {
+      "id": "dfe7bb52-bc93-4279-a55f-3e9598379e79",
+      "task_id": "e11f1838-2841-4121-bdbf-ba14696a8995",
+      "requested_by": "4848a388-617c-4a20-92d2-31b35b68f795",
+      "target_user_id": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+      "status": "accepted",
+      "message": "",
+      "requester": {
+        "name": "raj",
+        "avatar_url": null
+      },
+      "owner": {
+        "name": "ram",
+        "avatar_url": null
+      },
+      "task": {
+        "id": "e11f1838-2841-4121-bdbf-ba14696a8995",
+        "title": "Skill Exchange",
+        "posted_by": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+        "offering": "",
+        "wanting": ""
+      },
+      "created_at": "2026-05-09T20:34:01.189591+00:00"
+    },
+    {
+      "id": "3f083c74-2571-4e2a-a9b4-5542a87cb3ff",
+      "task_id": "da5ef8cd-cc2c-4f26-a41a-f1b659db39cf",
+      "requested_by": "4848a388-617c-4a20-92d2-31b35b68f795",
+      "target_user_id": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+      "status": "declined",
+      "message": "",
+      "requester": {
+        "name": "raj",
+        "avatar_url": null
+      },
+      "owner": {
+        "name": "ram",
+        "avatar_url": null
+      },
+      "task": {
+        "id": "da5ef8cd-cc2c-4f26-a41a-f1b659db39cf",
+        "title": "Skill Exchange",
+        "posted_by": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+        "offering": "",
+        "wanting": ""
+      },
+      "created_at": "2026-05-09T21:24:19.695305+00:00"
+    },
+    {
+      "id": "2ac91a51-fbcf-4f79-b819-03f9a55d6440",
+      "task_id": "2f8c99e4-574a-4fdd-8c31-d8cbe415c37e",
+      "requested_by": "4848a388-617c-4a20-92d2-31b35b68f795",
+      "target_user_id": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+      "status": "declined",
+      "message": "",
+      "requester": {
+        "name": "raj",
+        "avatar_url": null
+      },
+      "owner": {
+        "name": "ram",
+        "avatar_url": null
+      },
+      "task": {
+        "id": "2f8c99e4-574a-4fdd-8c31-d8cbe415c37e",
+        "title": "Skill Exchange",
+        "posted_by": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+        "offering": "",
+        "wanting": ""
+      },
+      "created_at": "2026-05-10T05:49:46.991694+00:00"
+    },
+    {
+      "id": "a16f622d-0199-444d-96a2-ad6db011c6d6",
+      "task_id": "77b64770-ea12-4f14-88e9-e534e0bd64df",
+      "requested_by": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+      "target_user_id": "4848a388-617c-4a20-92d2-31b35b68f795",
+      "status": "declined",
+      "message": "",
+      "requester": {
+        "name": "ram",
+        "avatar_url": null
+      },
+      "owner": {
+        "name": "raj",
+        "avatar_url": null
+      },
+      "task": {
+        "id": "77b64770-ea12-4f14-88e9-e534e0bd64df",
+        "title": "Skill Exchange",
+        "posted_by": "4848a388-617c-4a20-92d2-31b35b68f795",
+        "offering": "",
+        "wanting": ""
+      },
+      "created_at": "2026-05-10T04:44:14.302982+00:00"
+    },
+    {
+      "id": "ad3cc880-030d-4189-b91a-b920cec3faf6",
+      "task_id": "a67185f4-a5eb-46d2-94e3-6dcbc8868645",
+      "requested_by": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+      "target_user_id": "4848a388-617c-4a20-92d2-31b35b68f795",
+      "status": "declined",
+      "message": "",
+      "requester": {
+        "name": "ram",
+        "avatar_url": null
+      },
+      "owner": {
+        "name": "raj",
+        "avatar_url": null
+      },
+      "task": {
+        "id": "a67185f4-a5eb-46d2-94e3-6dcbc8868645",
+        "title": "Skill Exchange",
+        "posted_by": "4848a388-617c-4a20-92d2-31b35b68f795",
+        "offering": "",
+        "wanting": ""
+      },
+      "created_at": "2026-05-10T17:52:01.765801+00:00"
+    },
+    {
+      "id": "fe9e3dfb-38d5-45f2-8aaf-1ca27379691a",
+      "task_id": "e6b36342-ee23-41f6-9a92-455f16bfd269",
+      "requested_by": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+      "target_user_id": "4848a388-617c-4a20-92d2-31b35b68f795",
+      "status": "declined",
+      "message": "",
+      "requester": {
+        "name": "ram",
+        "avatar_url": null
+      },
+      "owner": {
+        "name": "raj",
+        "avatar_url": null
+      },
+      "task": {
+        "id": "e6b36342-ee23-41f6-9a92-455f16bfd269",
+        "title": "Skill Exchange",
+        "posted_by": "4848a388-617c-4a20-92d2-31b35b68f795",
+        "offering": "",
+        "wanting": ""
+      },
+      "created_at": "2026-05-10T19:13:38.642491+00:00"
+    },
+    {
+      "id": "4c3f7624-4377-4e2b-82c6-6f02e091da0e",
+      "task_id": "69931169-abc3-4450-b54d-c4b72a7766b8",
+      "requested_by": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+      "target_user_id": "4848a388-617c-4a20-92d2-31b35b68f795",
+      "status": "declined",
+      "message": "",
+      "requester": {
+        "name": "ram",
+        "avatar_url": null
+      },
+      "owner": {
+        "name": "raj",
+        "avatar_url": null
+      },
+      "task": {
+        "id": "69931169-abc3-4450-b54d-c4b72a7766b8",
+        "title": "Skill Exchange",
+        "posted_by": "4848a388-617c-4a20-92d2-31b35b68f795",
+        "offering": "",
+        "wanting": ""
+      },
+      "created_at": "2026-05-10T05:36:59.131645+00:00"
+    },
+    {
+      "id": "2c6f5bb7-9576-4431-937a-113f1aae54b2",
+      "task_id": "288a09a2-ffbf-409a-bd37-798b392a54b4",
+      "requested_by": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+      "target_user_id": "4848a388-617c-4a20-92d2-31b35b68f795",
+      "status": "declined",
+      "message": "",
+      "requester": {
+        "name": "ram",
+        "avatar_url": null
+      },
+      "owner": {
+        "name": "raj",
+        "avatar_url": null
+      },
+      "task": {
+        "id": "288a09a2-ffbf-409a-bd37-798b392a54b4",
+        "title": "Skill Exchange",
+        "posted_by": "4848a388-617c-4a20-92d2-31b35b68f795",
+        "offering": "",
+        "wanting": ""
+      },
+      "created_at": "2026-05-09T20:38:23.587425+00:00"
+    },
+    {
+      "id": "c51f86a7-c052-4edb-b177-260f84073c57",
+      "task_id": "3a42f274-f799-4f8e-8bfb-855438c458a6",
+      "requested_by": "4848a388-617c-4a20-92d2-31b35b68f795",
+      "target_user_id": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+      "status": "declined",
+      "message": "",
+      "requester": {
+        "name": "raj",
+        "avatar_url": null
+      },
+      "owner": {
+        "name": "ram",
+        "avatar_url": null
+      },
+      "task": {
+        "id": "3a42f274-f799-4f8e-8bfb-855438c458a6",
+        "title": "Skill Exchange",
+        "posted_by": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+        "offering": "",
+        "wanting": ""
+      },
+      "created_at": "2026-05-10T17:51:51.365161+00:00"
+    },
+    {
+      "id": "8cecb9b6-f93f-4f97-a4c6-8774c64ae316",
+      "task_id": "9f7346b3-1532-4756-88ee-d7c0e6b9713d",
+      "requested_by": "4848a388-617c-4a20-92d2-31b35b68f795",
+      "target_user_id": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+      "status": "declined",
+      "message": "",
+      "requester": {
+        "name": "raj",
+        "avatar_url": null
+      },
+      "owner": {
+        "name": "ram",
+        "avatar_url": null
+      },
+      "task": {
+        "id": "9f7346b3-1532-4756-88ee-d7c0e6b9713d",
+        "title": "Skill Exchange",
+        "posted_by": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+        "offering": "",
+        "wanting": ""
+      },
+      "created_at": "2026-05-10T16:07:59.953697+00:00"
+    },
+    {
+      "id": "3cae2fc6-2ae1-4d51-a5d9-753ed1811b2a",
+      "task_id": "3863cbc5-148b-48c9-b6a0-77c5d2a0084d",
+      "requested_by": "4848a388-617c-4a20-92d2-31b35b68f795",
+      "target_user_id": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+      "status": "declined",
+      "message": "",
+      "requester": {
+        "name": "raj",
+        "avatar_url": null
+      },
+      "owner": {
+        "name": "ram",
+        "avatar_url": null
+      },
+      "task": {
+        "id": "3863cbc5-148b-48c9-b6a0-77c5d2a0084d",
+        "title": "Skill Exchange",
+        "posted_by": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+        "offering": "",
+        "wanting": ""
+      },
+      "created_at": "2026-05-11T08:52:58.521562+00:00"
+    },
+    {
+      "id": "44962e9d-4f7a-41e0-8426-50d11837ceea",
+      "task_id": "8016fb70-068b-4b78-8acb-df0c32745cdb",
+      "requested_by": "27ae6dbf-9467-4de4-b96c-03e2ee8311f2",
+      "target_user_id": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+      "status": "declined",
+      "message": "",
+      "requester": {
+        "name": "chintu",
+        "avatar_url": null
+      },
+      "owner": {
+        "name": "ram",
+        "avatar_url": null
+      },
+      "task": {
+        "id": "8016fb70-068b-4b78-8acb-df0c32745cdb",
+        "title": "Learning Python",
+        "description": "Looking for help with Python. I can offer Java in exchange.",
+        "offering": [
+          "Java"
+        ],
+        "wanting": [
+          "Python"
+        ],
+        "type": "direct",
+        "duration": "1 hour",
+        "schedule": "Anytime",
+        "status": "open",
+        "posted_by": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+        "user": {
+          "name": "ram",
+          "avatar_url": null
+        },
+        "ai_metadata": null,
+        "created_at": "2026-05-11T08:52:03.222Z"
+      },
+      "created_at": "2026-05-11T09:02:32.704755+00:00"
+    }
+  ],
+  "rooms": [
+    {
+      "id": "73377fbd-f417-4498-ad7d-683c3b76e657",
+      "task_id": "e11f1838-2841-4121-bdbf-ba14696a8995",
+      "participants": [
+        "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+        "4848a388-617c-4a20-92d2-31b35b68f795"
+      ],
+      "participant_info": {
+        "d59b3bee-0dad-462f-88c4-b7943c0aa259": {
+          "name": "ram",
+          "avatar_url": null
+        },
+        "4848a388-617c-4a20-92d2-31b35b68f795": {
+          "name": "raj",
+          "avatar_url": null
+        }
+      },
+      "status": "active",
+      "connected": false,
+      "connection_clicks": [],
+      "messages": [],
+      "created_at": "2026-05-09T20:41:27.420736+00:00",
+      "last_message": null
+    },
+    {
+      "id": "1aea7998-1fef-4155-96e1-962333643927",
+      "task_id": "288a09a2-ffbf-409a-bd37-798b392a54b4",
+      "participants": [
+        "4848a388-617c-4a20-92d2-31b35b68f795",
+        "d59b3bee-0dad-462f-88c4-b7943c0aa259"
+      ],
+      "participant_info": {
+        "4848a388-617c-4a20-92d2-31b35b68f795": {
+          "name": "raj",
+          "avatar_url": null
+        },
+        "d59b3bee-0dad-462f-88c4-b7943c0aa259": {
+          "name": "ram",
+          "avatar_url": null
+        }
+      },
+      "status": "active",
+      "connected": false,
+      "connection_clicks": [],
+      "messages": [],
+      "created_at": "2026-05-09T20:48:08.104598+00:00",
+      "last_message": null
+    },
+    {
+      "id": "529049ad-eca7-4054-a28e-bab105059ea6",
+      "task_id": "da5ef8cd-cc2c-4f26-a41a-f1b659db39cf",
+      "participants": [
+        "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+        "4848a388-617c-4a20-92d2-31b35b68f795"
+      ],
+      "participant_info": {
+        "d59b3bee-0dad-462f-88c4-b7943c0aa259": {
+          "name": "ram",
+          "avatar_url": null
+        },
+        "4848a388-617c-4a20-92d2-31b35b68f795": {
+          "name": "raj",
+          "avatar_url": null
+        }
+      },
+      "status": "active",
+      "connected": false,
+      "connection_clicks": [],
+      "messages": [],
+      "created_at": "2026-05-10T04:35:20.141276+00:00",
+      "last_message": null
+    },
+    {
+      "id": "9fd99af3-56ea-4f79-831d-26d2bd434b98",
+      "task_id": "77b64770-ea12-4f14-88e9-e534e0bd64df",
+      "participants": [
+        "4848a388-617c-4a20-92d2-31b35b68f795",
+        "d59b3bee-0dad-462f-88c4-b7943c0aa259"
+      ],
+      "participant_info": {
+        "4848a388-617c-4a20-92d2-31b35b68f795": {
+          "name": "raj",
+          "avatar_url": null
+        },
+        "d59b3bee-0dad-462f-88c4-b7943c0aa259": {
+          "name": "ram",
+          "avatar_url": null
+        }
+      },
+      "status": "active",
+      "connected": false,
+      "connection_clicks": [],
+      "messages": [],
+      "created_at": "2026-05-10T04:44:48.250532+00:00",
+      "last_message": null
+    },
+    {
+      "id": "6831e062-0cc6-4996-8f21-2acea1af3114",
+      "task_id": "69931169-abc3-4450-b54d-c4b72a7766b8",
+      "participants": [
+        "4848a388-617c-4a20-92d2-31b35b68f795",
+        "d59b3bee-0dad-462f-88c4-b7943c0aa259"
+      ],
+      "participant_info": {
+        "4848a388-617c-4a20-92d2-31b35b68f795": {
+          "name": "raj",
+          "avatar_url": null
+        },
+        "d59b3bee-0dad-462f-88c4-b7943c0aa259": {
+          "name": "ram",
+          "avatar_url": null
+        }
+      },
+      "status": "active",
+      "connected": false,
+      "connection_clicks": [],
+      "messages": [],
+      "created_at": "2026-05-10T05:37:46.98889+00:00",
+      "last_message": null
+    },
+    {
+      "id": "a07e8fa7-8587-49a9-a668-8e6658d238ab",
+      "task_id": "2f8c99e4-574a-4fdd-8c31-d8cbe415c37e",
+      "participants": [
+        "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+        "4848a388-617c-4a20-92d2-31b35b68f795"
+      ],
+      "participant_info": {
+        "d59b3bee-0dad-462f-88c4-b7943c0aa259": {
+          "name": "ram",
+          "avatar_url": null
+        },
+        "4848a388-617c-4a20-92d2-31b35b68f795": {
+          "name": "raj",
+          "avatar_url": null
+        }
+      },
+      "status": "active",
+      "connected": false,
+      "connection_clicks": [],
+      "messages": [
+        {
+          "id": "5165b12c-f089-467d-9e75-94d82a01586e",
+          "room_id": "a07e8fa7-8587-49a9-a668-8e6658d238ab",
+          "sender_id": "ai-assistant",
+          "sender_name": "✨ ShareSphere AI",
+          "content": "Hi Ram and Raj, a huge congratulations on your match for the Skill Exchange topic, this is going to be an amazing opportunity for both of you to learn and grow. I'm excited to see you kick off this exchange and share your knowledge with each other. Let's get started and make the most of this skill exchange 📚",
+          "created_at": "2026-05-11T15:12:02.004Z"
+        }
+      ],
+      "created_at": "2026-05-10T05:50:00.963662+00:00",
+      "last_message": {
+        "content": "Hi Ram and Raj, a huge congratulations on your match for the Skill Exchange topic, this is going to be an amazing opportunity for both of you to learn and grow. I'm excited to see you kick off this exchange and share your knowledge with each other. Let's get started and make the most of this skill exchange 📚",
+        "sender_name": "✨ ShareSphere AI",
+        "created_at": "2026-05-11T15:12:02.004Z"
+      },
+      "task_title": "Skill Exchange"
+    },
+    {
+      "id": "afdb34db-aff4-46be-9abf-3a4d93099171",
+      "task_id": "9f7346b3-1532-4756-88ee-d7c0e6b9713d",
+      "participants": [
+        "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+        "4848a388-617c-4a20-92d2-31b35b68f795"
+      ],
+      "participant_info": {
+        "d59b3bee-0dad-462f-88c4-b7943c0aa259": {
+          "name": "ram",
+          "avatar_url": null
+        },
+        "4848a388-617c-4a20-92d2-31b35b68f795": {
+          "name": "raj",
+          "avatar_url": null
+        }
+      },
+      "status": "active",
+      "connected": false,
+      "connection_clicks": [],
+      "messages": [
+        {
+          "id": "a8885aec-23a3-4e97-961c-27cfe6929b7c",
+          "room_id": "afdb34db-aff4-46be-9abf-3a4d93099171",
+          "sender_id": "ai-assistant",
+          "sender_name": "✨ ShareSphere AI",
+          "content": "Hello Ram and Raj, we're thrilled to have matched you both for a skill exchange on the topic of Skill Exchange, and we can't wait to see the knowledge sharing and growth that comes out of this connection. This is a great opportunity for you both to learn from each other and expand your skills. Let's get started and make the most of this exchange 🚀",
+          "created_at": "2026-05-11T15:12:02.452Z"
+        }
+      ],
+      "created_at": "2026-05-10T16:08:27.39486+00:00",
+      "last_message": {
+        "content": "Hello Ram and Raj, we're thrilled to have matched you both for a skill exchange on the topic of Skill Exchange, and we can't wait to see the knowledge sharing and growth that comes out of this connection. This is a great opportunity for you both to learn from each other and expand your skills. Let's get started and make the most of this exchange 🚀",
+        "sender_name": "✨ ShareSphere AI",
+        "created_at": "2026-05-11T15:12:02.452Z"
+      },
+      "task_title": "Skill Exchange"
+    },
+    {
+      "id": "90b896a5-d985-41b7-bd87-5838420ccff0",
+      "task_id": "a67185f4-a5eb-46d2-94e3-6dcbc8868645",
+      "participants": [
+        "4848a388-617c-4a20-92d2-31b35b68f795",
+        "d59b3bee-0dad-462f-88c4-b7943c0aa259"
+      ],
+      "participant_info": {
+        "4848a388-617c-4a20-92d2-31b35b68f795": {
+          "name": "raj",
+          "avatar_url": null
+        },
+        "d59b3bee-0dad-462f-88c4-b7943c0aa259": {
+          "name": "ram",
+          "avatar_url": null
+        }
+      },
+      "status": "active",
+      "connected": false,
+      "connection_clicks": [],
+      "messages": [],
+      "created_at": "2026-05-10T17:55:41.770397+00:00",
+      "last_message": null
+    },
+    {
+      "id": "a08756d8-40a6-4a98-92e3-05f96ff47f38",
+      "task_id": "3a42f274-f799-4f8e-8bfb-855438c458a6",
+      "participants": [
+        "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+        "4848a388-617c-4a20-92d2-31b35b68f795"
+      ],
+      "participant_info": {
+        "d59b3bee-0dad-462f-88c4-b7943c0aa259": {
+          "name": "ram",
+          "avatar_url": null
+        },
+        "4848a388-617c-4a20-92d2-31b35b68f795": {
+          "name": "raj",
+          "avatar_url": null
+        }
+      },
+      "status": "active",
+      "connected": false,
+      "connection_clicks": [],
+      "messages": [
+        {
+          "id": "a8ad14a3-fb4d-4592-9add-d0c51e6205db",
+          "room_id": "a08756d8-40a6-4a98-92e3-05f96ff47f38",
+          "sender_id": "ai-assistant",
+          "sender_name": "✨ ShareSphere AI",
+          "content": "🎉 Your skill exchange for \"Skill Exchange\" has officially started! ram and raj — welcome to your shared workspace. Start by introducing yourselves and planning your first session!",
+          "created_at": "2026-05-11T08:44:43.795Z"
+        }
+      ],
+      "created_at": "2026-05-11T06:28:10.826164+00:00",
+      "last_message": {
+        "content": "🎉 Your skill exchange for \"Skill Exchange\" has officially started! ram and raj — welcome to your shared workspace. Start by introducing yourselves and planning your first session!",
+        "sender_name": "✨ ShareSphere AI",
+        "created_at": "2026-05-11T08:44:43.795Z"
+      },
+      "task_title": "Skill Exchange"
+    },
+    {
+      "id": "46807b06-be1e-4b16-9113-03aa315f2559",
+      "task_id": "8016fb70-068b-4b78-8acb-df0c32745cdb",
+      "participants": [
+        "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+        "27ae6dbf-9467-4de4-b96c-03e2ee8311f2"
+      ],
+      "participant_info": {
+        "d59b3bee-0dad-462f-88c4-b7943c0aa259": {
+          "name": "ram",
+          "avatar_url": null
+        },
+        "27ae6dbf-9467-4de4-b96c-03e2ee8311f2": {
+          "name": "chintu",
+          "avatar_url": null
+        }
+      },
+      "status": "active",
+      "connected": false,
+      "connection_clicks": [],
+      "messages": [
+        {
+          "id": "de212aad-b8ab-44d0-b465-0645f9921c4d",
+          "room_id": "46807b06-be1e-4b16-9113-03aa315f2559",
+          "sender_id": "ai-assistant",
+          "sender_name": "✨ ShareSphere AI",
+          "content": "🎉 Your skill exchange for \"Skill Exchange\" has officially started! ram and chintu — welcome to your shared workspace. Start by introducing yourselves and planning your first session!",
+          "created_at": "2026-05-11T09:02:46.485Z"
+        },
+        {
+          "id": "7cb7efbd-796e-43d1-b082-27a2ec0c25e6",
+          "room_id": "46807b06-be1e-4b16-9113-03aa315f2559",
+          "sender_id": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+          "sender_name": "ram",
+          "content": ";zjdfn jl",
+          "created_at": "2026-05-11T09:05:32.760Z"
+        },
+        {
+          "id": "c6b1e386-a0f4-43a2-a4ed-51806e797534",
+          "room_id": "46807b06-be1e-4b16-9113-03aa315f2559",
+          "sender_id": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+          "sender_name": "ram",
+          "content": "ldf",
+          "created_at": "2026-05-11T09:05:33.161Z"
+        },
+        {
+          "id": "6bd27e42-33df-4006-bc90-a10f1bafff88",
+          "room_id": "46807b06-be1e-4b16-9113-03aa315f2559",
+          "sender_id": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+          "sender_name": "ram",
+          "content": "fjn",
+          "created_at": "2026-05-11T09:05:33.484Z"
+        },
+        {
+          "id": "200402a2-fe9d-4cec-bbb5-377047601fdc",
+          "room_id": "46807b06-be1e-4b16-9113-03aa315f2559",
+          "sender_id": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+          "sender_name": "ram",
+          "content": "there is a cat and monkey both the cat and monkey is blind but they can see",
+          "created_at": "2026-05-11T09:14:19.980Z"
+        }
+      ],
+      "created_at": "2026-05-11T09:02:46.460Z",
+      "last_message": {
+        "content": "there is a cat and monkey both the cat and monkey is blind but they can see",
+        "sender_name": "ram",
+        "created_at": "2026-05-11T09:14:19.980Z"
+      },
+      "task_title": "Skill Exchange",
+      "workspace_notes": "## Exchange Overview\nRam is exchanging ideas with an unknown user on the topic of \"Skill Exchange\" on the ShareSphere platform. The conversation initially lacks clarity, with Ram's messages appearing to be unclear or potentially containing typographical errors, such as \";zjdfn jl\", \"ldf\", and \"fjn\". However, Ram introduces a metaphorical scenario involving a blind cat and monkey that can see, which may be related to the concept of perception or understanding in skill exchange.\n\n## Goals & Objectives\n* Ram's objectives are not explicitly stated, but it appears they want to discuss a concept or idea related to skill exchange, potentially using the cat and monkey scenario as an analogy.\n* The other user's goals and objectives are not mentioned in the conversation.\n\n## Action Items\n1. Ram needs to clarify their idea or concept, including the significance of the blind cat and monkey, to facilitate a meaningful discussion.\n2. The other user should respond with their understanding or questions about Ram's idea to progress the conversation.\n\n## Key Points Discussed\n* A scenario involving a blind cat and monkey that can see was mentioned, which may be a metaphor for a concept related to skill exchange, such as the idea that perception or understanding can be achieved through non-traditional means.\n* No other key points or important information were discussed, as the conversation lacks coherence and clarity.\n\n## Timeline / Schedule\nNo specific dates, deadlines, or session schedules were mentioned in the conversation. The users have not established a plan or timeline for their skill exchange discussion. To move forward, it is essential for the users to schedule a follow-up conversation to discuss Ram's idea in more detail and establish a clear plan for the skill exchange."
+    },
+    {
+      "id": "44182211-823d-42e7-9718-72718e3c55a1",
+      "task_id": "3863cbc5-148b-48c9-b6a0-77c5d2a0084d",
+      "participants": [
+        "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+        "4848a388-617c-4a20-92d2-31b35b68f795"
+      ],
+      "participant_info": {
+        "d59b3bee-0dad-462f-88c4-b7943c0aa259": {
+          "name": "ram",
+          "avatar_url": null
+        },
+        "4848a388-617c-4a20-92d2-31b35b68f795": {
+          "name": "raj",
+          "avatar_url": null
+        }
+      },
+      "status": "active",
+      "connected": false,
+      "connection_clicks": [],
+      "messages": [],
+      "created_at": "2026-05-11T08:53:42.237157+00:00",
+      "last_message": null
+    }
+  ],
+  "notifications": [
+    {
+      "id": "3e2a5437-4543-49d8-9bf1-0d56995da3f2",
+      "user_id": "27ae6dbf-9467-4de4-b96c-03e2ee8311f2",
+      "content": "Session complete: \"Cpp\". 5 credits deducted.",
+      "type": "broadcast_ended",
+      "reference_id": null,
+      "task_id": "6497607c-4851-4d6c-ab8e-4aad8faa2bd3",
+      "is_read": false,
+      "created_at": "2026-05-11T15:16:34.419Z"
+    },
+    {
+      "id": "9420e23d-5705-4534-936c-19c7bf4459ed",
+      "user_id": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+      "content": "Session ended: \"Cpp\". 1 attended. You earned 5 credits.",
+      "type": "broadcast_ended",
+      "reference_id": null,
+      "task_id": "6497607c-4851-4d6c-ab8e-4aad8faa2bd3",
+      "is_read": false,
+      "created_at": "2026-05-11T15:16:34.412Z"
+    },
+    {
+      "id": "e5f52b04-2d1f-4d46-9732-6d3d70906732",
+      "user_id": "27ae6dbf-9467-4de4-b96c-03e2ee8311f2",
+      "content": "\"Cpp\" is now live! Join the session now.",
+      "type": "broadcast_live",
+      "reference_id": null,
+      "task_id": "6497607c-4851-4d6c-ab8e-4aad8faa2bd3",
+      "is_read": false,
+      "created_at": "2026-05-11T15:14:23.642Z"
+    },
+    {
+      "id": "ad535a57-bc00-4252-bd4c-10e49c1bb23b",
+      "user_id": "4848a388-617c-4a20-92d2-31b35b68f795",
+      "content": "ram accepted your exchange request! Your chat is ready.",
+      "type": "request_accepted",
+      "reference_id": "afdb34db-aff4-46be-9abf-3a4d93099171",
+      "task_id": "9f7346b3-1532-4756-88ee-d7c0e6b9713d",
+      "is_read": false,
+      "created_at": "2026-05-11T15:12:01.774Z"
+    },
+    {
+      "id": "99326313-038c-4893-8b67-941cabb59ac4",
+      "user_id": "4848a388-617c-4a20-92d2-31b35b68f795",
+      "content": "ram accepted your exchange request! Your chat is ready.",
+      "type": "request_accepted",
+      "reference_id": "a07e8fa7-8587-49a9-a668-8e6658d238ab",
+      "task_id": "2f8c99e4-574a-4fdd-8c31-d8cbe415c37e",
+      "is_read": false,
+      "created_at": "2026-05-11T15:12:01.321Z"
+    },
+    {
+      "id": "94443d68-7eeb-4d5f-b3fd-451fd4c31cd1",
+      "user_id": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+      "content": "chintu enrolled in your class: Cpp",
+      "type": "broadcast_enrollment",
+      "reference_id": "ba94b27e-1575-4857-b3b1-1ee6738a202b",
+      "task_id": "6497607c-4851-4d6c-ab8e-4aad8faa2bd3",
+      "is_read": false,
+      "created_at": "2026-05-11T11:11:10.939Z"
+    },
+    {
+      "id": "c5bfc360-f46e-41cd-9c60-d35aa161c360",
+      "user_id": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+      "content": "chintu enrolled in your class: Cpp",
+      "type": "broadcast_enrollment",
+      "reference_id": "ba94b27e-1575-4857-b3b1-1ee6738a202b",
+      "task_id": "6497607c-4851-4d6c-ab8e-4aad8faa2bd3",
+      "is_read": false,
+      "created_at": "2026-05-11T10:44:13.385Z"
+    },
+    {
+      "id": "20c68f0b-c7cc-40af-b032-8f8d76d1a593",
+      "user_id": "27ae6dbf-9467-4de4-b96c-03e2ee8311f2",
+      "content": "Session complete: \"Java\". 5 credits deducted.",
+      "type": "broadcast_ended",
+      "reference_id": null,
+      "task_id": "d933b9f8-8226-4e13-8e76-d8d2409c83a6",
+      "is_read": false,
+      "created_at": "2026-05-11T10:26:49.628Z"
+    },
+    {
+      "id": "c6f756a0-1f5f-4d55-8697-76cc8e8bef9b",
+      "user_id": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+      "content": "Session ended: \"Java\". 1 attended. You earned 5 credits.",
+      "type": "broadcast_ended",
+      "reference_id": null,
+      "task_id": "d933b9f8-8226-4e13-8e76-d8d2409c83a6",
+      "is_read": false,
+      "created_at": "2026-05-11T10:26:49.622Z"
+    },
+    {
+      "id": "d4d4ec43-6ed0-4274-901d-9cd83e703e17",
+      "user_id": "27ae6dbf-9467-4de4-b96c-03e2ee8311f2",
+      "content": "\"Java\" is now live! Join the session now.",
+      "type": "broadcast_live",
+      "reference_id": null,
+      "task_id": "d933b9f8-8226-4e13-8e76-d8d2409c83a6",
+      "is_read": false,
+      "created_at": "2026-05-11T10:25:43.352Z"
+    },
+    {
+      "id": "9dcb9a51-c8d5-4158-a97f-7f2c866ab3e1",
+      "user_id": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+      "content": "chintu enrolled in your class: Java",
+      "type": "broadcast_enrollment",
+      "reference_id": "2b0018ff-5f6e-4e22-966d-39e8b3400e34",
+      "task_id": "d933b9f8-8226-4e13-8e76-d8d2409c83a6",
+      "is_read": false,
+      "created_at": "2026-05-11T09:51:29.579Z"
+    },
+    {
+      "id": "76ebada9-850f-456d-b6b3-23745a0347f1",
+      "user_id": "27ae6dbf-9467-4de4-b96c-03e2ee8311f2",
+      "content": "ram accepted your exchange request! Your chat is ready.",
+      "type": "request_accepted",
+      "reference_id": "46807b06-be1e-4b16-9113-03aa315f2559",
+      "task_id": "8016fb70-068b-4b78-8acb-df0c32745cdb",
+      "is_read": false,
+      "created_at": "2026-05-11T09:02:46.491Z"
+    },
+    {
+      "id": "0e638353-6937-44ca-bd1f-1767a308aa88",
+      "user_id": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+      "content": "chintu wants to connect for \"Learning Python\"!",
+      "type": "request_new",
+      "reference_id": "86941262-fa81-4c00-a182-0b41db34f08e",
+      "task_id": null,
+      "is_read": true,
+      "created_at": "2026-05-11T09:02:31.962Z"
+    },
+    {
+      "id": "c9e148ca-ade7-4c24-a973-dff68c4d79ce",
+      "user_id": "4848a388-617c-4a20-92d2-31b35b68f795",
+      "content": "ram accepted your exchange request! Your chat is ready.",
+      "type": "request_accepted",
+      "reference_id": "a08756d8-40a6-4a98-92e3-05f96ff47f38",
+      "task_id": "3a42f274-f799-4f8e-8bfb-855438c458a6",
+      "is_read": false,
+      "created_at": "2026-05-11T08:44:43.818Z"
+    }
+  ],
+  "ratings": [],
+  "broadcasts": [
+    {
+      "id": "6497607c-4851-4d6c-ab8e-4aad8faa2bd3",
+      "title": "Cpp",
+      "description": "OOPS through Cpp\n",
+      "duration": "2 hours",
+      "deadline": "2026-05-12",
+      "max_people": 10,
+      "current_people": 1,
+      "reward_credits": 5,
+      "category": "Language",
+      "scheduled_at": "2026-05-13T10:00",
+      "difficulty": "beginner",
+      "prerequisites": "nothing",
+      "status": "completed",
+      "posted_by": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+      "user": {
+        "name": "ram",
+        "avatar_url": null
+      },
+      "created_at": "2026-05-11T10:43:27.238Z",
+      "started_at": "2026-05-11T15:14:23.635Z",
+      "ended_at": "2026-05-11T15:16:34.401Z"
+    },
+    {
+      "id": "d933b9f8-8226-4e13-8e76-d8d2409c83a6",
+      "title": "Java",
+      "description": "OOPS through JAVA\n",
+      "duration": "2 hours",
+      "deadline": "2026-05-14",
+      "max_people": 10,
+      "current_people": 1,
+      "reward_credits": 5,
+      "category": "Development",
+      "scheduled_at": null,
+      "difficulty": "beginner",
+      "prerequisites": "Basics of JAVA",
+      "status": "completed",
+      "posted_by": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+      "user": {
+        "name": "ram",
+        "avatar_url": null
+      },
+      "created_at": "2026-05-11T09:49:38.722Z",
+      "started_at": "2026-05-11T10:25:43.324Z",
+      "ended_at": "2026-05-11T10:26:49.614Z"
+    }
+  ],
+  "broadcast_requests": [],
+  "broadcast_enrollments": [
+    {
+      "id": "2b0018ff-5f6e-4e22-966d-39e8b3400e34",
+      "broadcast_id": "d933b9f8-8226-4e13-8e76-d8d2409c83a6",
+      "user_id": "27ae6dbf-9467-4de4-b96c-03e2ee8311f2",
+      "status": "attended",
+      "user": {
+        "name": "chintu",
+        "avatar_url": null
+      },
+      "enrolled_at": "2026-05-11T09:51:29.572Z"
+    },
+    {
+      "id": "ba94b27e-1575-4857-b3b1-1ee6738a202b",
+      "broadcast_id": "6497607c-4851-4d6c-ab8e-4aad8faa2bd3",
+      "user_id": "27ae6dbf-9467-4de4-b96c-03e2ee8311f2",
+      "status": "attended",
+      "user": {
+        "name": "chintu",
+        "avatar_url": null
+      },
+      "enrolled_at": "2026-05-11T10:44:13.378Z"
+    }
+  ],
+  "credit_transactions": [
+    {
+      "id": "1263fa94-6073-44b8-a731-07bdb4c259bf",
+      "broadcast_id": "d933b9f8-8226-4e13-8e76-d8d2409c83a6",
+      "user_id": "27ae6dbf-9467-4de4-b96c-03e2ee8311f2",
+      "amount": -5,
+      "type": "debit",
+      "reason": "Attended broadcast: Java",
+      "created_at": "2026-05-11T10:26:49.615Z"
+    },
+    {
+      "id": "c4c5d3e7-9034-40fb-afdd-fef438f09eed",
+      "broadcast_id": "d933b9f8-8226-4e13-8e76-d8d2409c83a6",
+      "user_id": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+      "amount": 5,
+      "type": "credit",
+      "reason": "Earnings from broadcast: Java (1 attendees)",
+      "created_at": "2026-05-11T10:26:49.615Z"
+    },
+    {
+      "id": "e556edbf-49ae-4146-92e8-369b5207fa33",
+      "broadcast_id": "6497607c-4851-4d6c-ab8e-4aad8faa2bd3",
+      "user_id": "27ae6dbf-9467-4de4-b96c-03e2ee8311f2",
+      "amount": -5,
+      "type": "debit",
+      "reason": "Attended broadcast: Cpp",
+      "created_at": "2026-05-11T15:16:34.402Z"
+    },
+    {
+      "id": "5069029e-14a2-4482-9083-ef84ed2aee3c",
+      "broadcast_id": "6497607c-4851-4d6c-ab8e-4aad8faa2bd3",
+      "user_id": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+      "amount": 5,
+      "type": "credit",
+      "reason": "Earnings from broadcast: Cpp (1 attendees)",
+      "created_at": "2026-05-11T15:16:34.403Z"
+    }
+  ],
+  "connection_stages": [
+    {
+      "id": "8cd651d2-a975-4c20-9554-81cf9745d8a4",
+      "room_id": "46807b06-be1e-4b16-9113-03aa315f2559",
+      "user_id": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+      "stage": "connected",
+      "delivery_note": null,
+      "confirmed_at": "2026-05-11T09:02:55.865Z"
+    }
+  ],
+  "reviews": [],
+  "disputes": [],
+  "users": [
+    {
+      "id": "27ae6dbf-9467-4de4-b96c-03e2ee8311f2",
+      "reviews_count": 0,
+      "rating": 0,
+      "analysis": {},
+      "points": -10,
+      "avatar_url": null,
+      "title": "",
+      "location": "",
+      "bio": ""
+    },
+    {
+      "id": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+      "reviews_count": 0,
+      "rating": 0,
+      "analysis": "",
+      "enhancements": [],
+      "points": 10,
+      "completed_count": 0
+    }
+  ],
+  "user_skills": [
+    {
+      "id": "aa540b69-f054-4830-8d1b-ba36f40ff2ee",
+      "user_id": "8dd54163-7812-4a5a-8d8b-f6cf3cf0dbe2",
+      "skill_name": "java",
+      "skill_type": "offering",
+      "created_at": "2026-05-11T08:46:44.537Z"
+    },
+    {
+      "id": "ccf630f0-615b-414e-8f5f-376149e28fd2",
+      "user_id": "8dd54163-7812-4a5a-8d8b-f6cf3cf0dbe2",
+      "skill_name": "react",
+      "skill_type": "wanting",
+      "created_at": "2026-05-11T08:46:48.471Z"
+    },
+    {
+      "id": "ee19ce93-4295-4c5b-8258-476eb8940d23",
+      "user_id": "27ae6dbf-9467-4de4-b96c-03e2ee8311f2",
+      "skill_name": "Graphic Design",
+      "skill_type": "offering",
+      "created_at": "2026-05-11T08:50:11.035Z"
+    },
+    {
+      "id": "aef29f82-70bf-4f2e-9f11-cfbfa6dc5026",
+      "user_id": "27ae6dbf-9467-4de4-b96c-03e2ee8311f2",
+      "skill_name": "Content Writing",
+      "skill_type": "offering",
+      "created_at": "2026-05-11T08:50:11.054Z"
+    },
+    {
+      "id": "588ba4de-373c-49d3-bc55-91a971a7f3dc",
+      "user_id": "27ae6dbf-9467-4de4-b96c-03e2ee8311f2",
+      "skill_name": "Project Management",
+      "skill_type": "offering",
+      "created_at": "2026-05-11T08:50:11.062Z"
+    },
+    {
+      "id": "77e8fe58-a82e-4eac-a6a5-c290fa822efd",
+      "user_id": "27ae6dbf-9467-4de4-b96c-03e2ee8311f2",
+      "skill_name": "TypeScript",
+      "skill_type": "offering",
+      "created_at": "2026-05-11T08:50:11.069Z"
+    },
+    {
+      "id": "de175510-3162-4ef7-81cb-f215d8f69fbc",
+      "user_id": "27ae6dbf-9467-4de4-b96c-03e2ee8311f2",
+      "skill_name": "DevOps",
+      "skill_type": "offering",
+      "created_at": "2026-05-11T08:50:11.090Z"
+    },
+    {
+      "id": "5d79617f-90ff-4ead-9c14-28d449bceeba",
+      "user_id": "27ae6dbf-9467-4de4-b96c-03e2ee8311f2",
+      "skill_name": "Kubernetes",
+      "skill_type": "offering",
+      "created_at": "2026-05-11T08:50:11.111Z"
+    },
+    {
+      "id": "f55d5ace-b4f6-41c5-bc66-31ac10a5dd96",
+      "user_id": "27ae6dbf-9467-4de4-b96c-03e2ee8311f2",
+      "skill_name": "Data Analysis",
+      "skill_type": "offering",
+      "created_at": "2026-05-11T08:50:11.117Z"
+    }
+  ],
+  "match_requests": [],
+  "admins": [
+    {
+      "id": "1",
+      "email": "admin@sharesphere.com",
+      "password": "$2b$10$LYYN29oBaztOEKpKWyb.JegXXbQaoo.GRXep.SOGL8tCMDzdb6F5C",
+      "name": "Super Admin",
+      "role": "super_admin",
+      "avatar": null,
+      "phone": "+91 9000000001",
+      "department": "Platform Management",
+      "permissions": [
+        "all"
+      ],
+      "last_login": "2026-05-11T15:24:16.892Z",
+      "created_at": "2026-05-11T08:32:34.113Z"
+    },
+    {
+      "id": "2",
+      "email": "sriraj@sharesphere.com",
+      "password": "$2b$10$NuUzM7QzbsLTjbO.19ZcmeikL5eYEZAOOfDZpo1fyw.iwSdelbs.2",
+      "name": "Sri Raj",
+      "role": "super_admin",
+      "avatar": null,
+      "phone": "+91 9000000002",
+      "department": "Engineering",
+      "permissions": [
+        "all"
+      ],
+      "last_login": null,
+      "created_at": "2026-05-11T08:32:34.113Z"
+    },
+    {
+      "id": "3",
+      "email": "moderator@sharesphere.com",
+      "password": "$2b$10$V1o60PS4ljO4gzEyDIqpr.vdQd6Qx/Oy4cb/EDerkFXEYN.ykiuMe",
+      "name": "Moderator",
+      "role": "moderator",
+      "avatar": null,
+      "phone": "+91 9000000003",
+      "department": "Trust & Safety",
+      "permissions": [
+        "users",
+        "reports",
+        "sessions"
+      ],
+      "last_login": null,
+      "created_at": "2026-05-11T08:32:34.113Z"
+    }
+  ],
+  "moderation_actions": [],
+  "broadcast_rooms": [
+    {
+      "id": "ae9fcfa7-f7bf-45fd-bed0-518e251dc89c",
+      "broadcast_id": "test-123",
+      "title": "Broadcast Class",
+      "notes": "",
+      "messages": [],
+      "created_at": "2026-05-11T11:21:19.589Z"
+    },
+    {
+      "id": "634fc1bf-318e-40d2-a271-06f7c5f235cc",
+      "broadcast_id": "6497607c-4851-4d6c-ab8e-4aad8faa2bd3",
+      "title": "Cpp",
+      "notes": "",
+      "messages": [
+        {
+          "id": "7ce79da2-ca72-4853-aace-a1ee75682414",
+          "broadcast_id": "6497607c-4851-4d6c-ab8e-4aad8faa2bd3",
+          "sender_id": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+          "sender_name": "ram",
+          "content": "hiii",
+          "created_at": "2026-05-11T15:12:50.799Z"
+        },
+        {
+          "id": "e8e9ef2c-5c92-4698-9e1c-0ad5d0c00ca4",
+          "broadcast_id": "6497607c-4851-4d6c-ab8e-4aad8faa2bd3",
+          "sender_id": "27ae6dbf-9467-4de4-b96c-03e2ee8311f2",
+          "sender_name": "chintu",
+          "content": "heellooo sirr",
+          "created_at": "2026-05-11T15:13:57.928Z"
+        }
+      ],
+      "created_at": "2026-05-11T15:12:43.701Z",
+      "last_message": {
+        "content": "heellooo sirr",
+        "sender_name": "chintu",
+        "created_at": "2026-05-11T15:13:57.928Z"
+      }
+    }
+  ]
+}
