@@ -1522,6 +1522,117 @@
         "created_at": "2026-05-11T08:52:03.222Z"
       },
       "created_at": "2026-05-11T09:02:32.704755+00:00"
+    },
+    {
+      "id": "4e596dd7-2dd4-471c-856d-94ebb52ea08a",
+      "task_id": "fc64bd5a-5aef-4bfd-b496-6d3596c5eb83",
+      "requested_by": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+      "target_user_id": "27ae6dbf-9467-4de4-b96c-03e2ee8311f2",
+      "status": "declined",
+      "message": "",
+      "requester": {
+        "name": "ram",
+        "avatar_url": null
+      },
+      "owner": {
+        "name": "chintu",
+        "avatar_url": null
+      },
+      "task": {
+        "id": "fc64bd5a-5aef-4bfd-b496-6d3596c5eb83",
+        "title": "Learning Java",
+        "description": "Looking for help with Java. I can offer Python in exchange.",
+        "offering": [
+          "Python"
+        ],
+        "wanting": [
+          "Java"
+        ],
+        "type": "direct",
+        "duration": "1 hour",
+        "schedule": "Anytime",
+        "status": "open",
+        "posted_by": "27ae6dbf-9467-4de4-b96c-03e2ee8311f2",
+        "user": {
+          "name": "chintu",
+          "avatar_url": null
+        },
+        "ai_metadata": null,
+        "created_at": "2026-05-11T08:51:09.919Z"
+      },
+      "created_at": "2026-05-12T06:30:17.717065+00:00"
+    },
+    {
+      "id": "34fd5c3b-f6f8-4782-ab11-af93f0a1aaf6",
+      "task_id": "84886bd9-365a-48be-b628-e91fa70969a5",
+      "requested_by": "55b257b4-be33-405f-a4bb-9586bad7c27b",
+      "target_user_id": "27ae6dbf-9467-4de4-b96c-03e2ee8311f2",
+      "status": "declined",
+      "message": "",
+      "requester": {
+        "name": "Bonagiri Shanmukhi Sri ",
+        "avatar_url": null
+      },
+      "owner": {
+        "name": "chintu",
+        "avatar_url": null
+      },
+      "task": {
+        "id": "84886bd9-365a-48be-b628-e91fa70969a5",
+        "title": "Skill Exchange",
+        "posted_by": "27ae6dbf-9467-4de4-b96c-03e2ee8311f2",
+        "offering": "",
+        "wanting": ""
+      },
+      "created_at": "2026-05-12T06:31:20.726013+00:00"
+    },
+    {
+      "id": "86d3b081-461d-4ad6-be9f-5632556bb2dd",
+      "task_id": "d1624ef9-6108-4631-8a13-60027148c984",
+      "requested_by": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+      "target_user_id": "8dd54163-7812-4a5a-8d8b-f6cf3cf0dbe2",
+      "status": "declined",
+      "message": "",
+      "requester": {
+        "name": "ram",
+        "avatar_url": null
+      },
+      "owner": {
+        "name": "alice",
+        "avatar_url": null
+      },
+      "task": {
+        "id": "d1624ef9-6108-4631-8a13-60027148c984",
+        "title": "Skill Exchange",
+        "posted_by": "8dd54163-7812-4a5a-8d8b-f6cf3cf0dbe2",
+        "offering": "",
+        "wanting": ""
+      },
+      "created_at": "2026-05-12T06:34:32.515785+00:00"
+    },
+    {
+      "id": "61d5b8b5-ab56-4045-876b-c11ba601e982",
+      "task_id": "989e093e-c664-4ec0-bada-152dedc4b218",
+      "requested_by": "14b5e208-260f-4e3e-8091-400cdbb147ec",
+      "target_user_id": "8dd54163-7812-4a5a-8d8b-f6cf3cf0dbe2",
+      "status": "accepted",
+      "message": "",
+      "requester": {
+        "name": "tejo",
+        "avatar_url": null
+      },
+      "owner": {
+        "name": "alice",
+        "avatar_url": null
+      },
+      "task": {
+        "id": "989e093e-c664-4ec0-bada-152dedc4b218",
+        "title": "Skill Exchange",
+        "posted_by": "8dd54163-7812-4a5a-8d8b-f6cf3cf0dbe2",
+        "offering": "",
+        "wanting": ""
+      },
+      "created_at": "2026-05-12T06:51:12.337362+00:00"
     }
   ],
   "rooms": [
@@ -1876,6 +1987,102 @@
       "connection_clicks": [],
       "messages": [],
       "created_at": "2026-05-11T08:53:42.237157+00:00",
+      "last_message": null
+    },
+    {
+      "id": "0b742a6d-e432-431e-a6c3-3cbcbdf699e1",
+      "task_id": "fc64bd5a-5aef-4bfd-b496-6d3596c5eb83",
+      "participants": [
+        "27ae6dbf-9467-4de4-b96c-03e2ee8311f2",
+        "d59b3bee-0dad-462f-88c4-b7943c0aa259"
+      ],
+      "participant_info": {
+        "27ae6dbf-9467-4de4-b96c-03e2ee8311f2": {
+          "name": "chintu",
+          "avatar_url": null
+        },
+        "d59b3bee-0dad-462f-88c4-b7943c0aa259": {
+          "name": "ram",
+          "avatar_url": null
+        }
+      },
+      "status": "active",
+      "connected": false,
+      "connection_clicks": [],
+      "messages": [],
+      "created_at": "2026-05-12T06:30:30.168115+00:00",
+      "last_message": null
+    },
+    {
+      "id": "9e7bed99-4b7d-4713-ad8f-628d4a675586",
+      "task_id": "84886bd9-365a-48be-b628-e91fa70969a5",
+      "participants": [
+        "27ae6dbf-9467-4de4-b96c-03e2ee8311f2",
+        "55b257b4-be33-405f-a4bb-9586bad7c27b"
+      ],
+      "participant_info": {
+        "27ae6dbf-9467-4de4-b96c-03e2ee8311f2": {
+          "name": "chintu",
+          "avatar_url": null
+        },
+        "55b257b4-be33-405f-a4bb-9586bad7c27b": {
+          "name": "Bonagiri Shanmukhi Sri ",
+          "avatar_url": null
+        }
+      },
+      "status": "active",
+      "connected": false,
+      "connection_clicks": [],
+      "messages": [],
+      "created_at": "2026-05-12T06:31:28.549655+00:00",
+      "last_message": null
+    },
+    {
+      "id": "1322461e-bfe8-42ef-a6f2-136c9f730ed6",
+      "task_id": "d1624ef9-6108-4631-8a13-60027148c984",
+      "participants": [
+        "8dd54163-7812-4a5a-8d8b-f6cf3cf0dbe2",
+        "d59b3bee-0dad-462f-88c4-b7943c0aa259"
+      ],
+      "participant_info": {
+        "8dd54163-7812-4a5a-8d8b-f6cf3cf0dbe2": {
+          "name": "alice",
+          "avatar_url": null
+        },
+        "d59b3bee-0dad-462f-88c4-b7943c0aa259": {
+          "name": "ram",
+          "avatar_url": null
+        }
+      },
+      "status": "active",
+      "connected": false,
+      "connection_clicks": [],
+      "messages": [],
+      "created_at": "2026-05-12T06:34:56.522927+00:00",
+      "last_message": null
+    },
+    {
+      "id": "ba0e2950-19d9-4f1c-b700-593a3ac2a88c",
+      "task_id": "989e093e-c664-4ec0-bada-152dedc4b218",
+      "participants": [
+        "8dd54163-7812-4a5a-8d8b-f6cf3cf0dbe2",
+        "14b5e208-260f-4e3e-8091-400cdbb147ec"
+      ],
+      "participant_info": {
+        "8dd54163-7812-4a5a-8d8b-f6cf3cf0dbe2": {
+          "name": "alice",
+          "avatar_url": null
+        },
+        "14b5e208-260f-4e3e-8091-400cdbb147ec": {
+          "name": "tejo",
+          "avatar_url": null
+        }
+      },
+      "status": "active",
+      "connected": false,
+      "connection_clicks": [],
+      "messages": [],
+      "created_at": "2026-05-12T06:51:42.856656+00:00",
       "last_message": null
     }
   ],

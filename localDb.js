@@ -618,6 +618,29 @@ function enrollInBroadcast({ broadcast_id, user_id, userName, userAvatar }) {
     user: { name: userName || 'User', avatar_url: userAvatar || null },
     enrolled_at: new Date().toISOString()
   };
+
+  // Deduct credits from learner
+  if (broadcast.reward_credits > 0) {
+    if (!db.users) db.users = [];
+    let learnerRecord = db.users.find(u => u.id === user_id);
+    if (!learnerRecord) {
+      learnerRecord = { id: user_id, points: 200 };
+      db.users.push(learnerRecord);
+    }
+    learnerRecord.points = (learnerRecord.points ?? 200) - broadcast.reward_credits;
+
+    if (!db.credit_transactions) db.credit_transactions = [];
+    db.credit_transactions.push({
+      id: uuidv4(),
+      broadcast_id,
+      user_id,
+      amount: -broadcast.reward_credits,
+      type: 'debit',
+      reason: `Enrollment in class: ${broadcast.title}`,
+      created_at: new Date().toISOString()
+    });
+  }
+
   db.broadcast_enrollments.push(enrollment);
   broadcast.current_people = (broadcast.current_people || 0) + 1;
   writeDb(db);
@@ -775,51 +798,42 @@ function endBroadcast(id, attendances) {
   if (!db.credit_transactions) db.credit_transactions = [];
 
   let attendedCount = 0;
+  let totalCreditsForTutor = 0;
+  
   (attendances || []).forEach(a => {
     const enrollment = (db.broadcast_enrollments || []).find(e => e.broadcast_id === id && e.user_id === a.user_id);
-    if (enrollment) enrollment.status = a.attended ? 'attended' : 'no_show';
-
-    if (a.attended) {
-      attendedCount++;
-      if (broadcast.reward_credits > 0) {
-        // Attendee EARNS credits set by the broadcaster
-        db.credit_transactions.push({
-          id: uuidv4(),
-          broadcast_id: id,
-          user_id: a.user_id,
-          amount: broadcast.reward_credits,
-          type: 'credit',
-          reason: `Attended broadcast: ${broadcast.title}`,
-          created_at: new Date().toISOString()
-        });
-        const learner = db.users.find(u => u.id === a.user_id);
-        if (learner) learner.points = (learner.points || 0) + broadcast.reward_credits;
+    if (enrollment) {
+      enrollment.status = a.attended ? 'attended' : 'no_show';
+      if (a.attended) {
+        attendedCount++;
+        totalCreditsForTutor += (broadcast.reward_credits || 0);
       }
     }
   });
 
-  const totalAwarded = attendedCount * (broadcast.reward_credits || 0);
-  if (totalAwarded > 0) {
-    // Broadcaster PAYS the total credits awarded to attendees
+  // Pay the tutor
+  if (totalCreditsForTutor > 0) {
+    if (!db.users) db.users = [];
+    let tutorRecord = db.users.find(u => u.id === broadcast.posted_by);
+    if (!tutorRecord) {
+      tutorRecord = { id: broadcast.posted_by, points: 200 };
+      db.users.push(tutorRecord);
+    }
+    tutorRecord.points = (tutorRecord.points ?? 200) + totalCreditsForTutor;
+
     db.credit_transactions.push({
       id: uuidv4(),
       broadcast_id: id,
       user_id: broadcast.posted_by,
-      amount: -totalAwarded,
-      type: 'debit',
-      reason: `Credits awarded to attendees of: ${broadcast.title} (${attendedCount} attended)`,
+      amount: totalCreditsForTutor,
+      type: 'credit',
+      reason: `Earnings from completed class: ${broadcast.title} (${attendedCount} attendees)`,
       created_at: new Date().toISOString()
     });
-    let tutor = db.users.find(u => u.id === broadcast.posted_by);
-    if (!tutor) {
-      tutor = { id: broadcast.posted_by, reviews_count: 0, rating: 0, analysis: '', enhancements: [], points: 200, completed_count: 0 };
-      db.users.push(tutor);
-    }
-    tutor.points = (tutor.points || 0) - totalAwarded;
   }
 
   writeDb(db);
-  return broadcast;
+  return { ...broadcast, attendedCount, totalAwarded: totalCreditsForTutor };
 }
 
 // Removed legacy broadcast_requests functions
@@ -1468,7 +1482,7 @@ function addProjectChatMessage(projectId, { senderId, senderName, content }) {
   const db = readDb();
   if (!db.project_rooms) return null;
   const room = db.project_rooms.find(r => r.project_id === projectId);
-  if (!room) return null;
+  if (!room || room.status === 'closed') return null;
   const message = {
     id: uuidv4(), project_id: projectId,
     sender_id: senderId, sender_name: senderName, content,
@@ -1485,7 +1499,7 @@ function saveProjectNotes(projectId, notes) {
   const db = readDb();
   if (!db.project_rooms) return null;
   const room = db.project_rooms.find(r => r.project_id === projectId);
-  if (room) { room.notes = notes; writeDb(db); }
+  if (room && room.status !== 'closed') { room.notes = notes; writeDb(db); }
   return room;
 }
 
@@ -1497,6 +1511,8 @@ function completeProject(projectId) {
   project.status = 'completed';
   project.completed_at = new Date().toISOString();
   if (!db.credit_transactions) db.credit_transactions = [];
+
+  // 1 — Pay all contributors (credits were already escrowed from the owner at creation)
   project.members.forEach(member => {
     const credits = member.credits_allocated || 0;
     if (credits <= 0) return;
@@ -1510,15 +1526,22 @@ function completeProject(projectId) {
       project_id: projectId, created_at: new Date().toISOString()
     });
   });
+
+  // 2 — Increment owner completed_count (credits already deducted at escrow)
   let owner = db.users.find(u => u.id === project.owner_id);
-  if (owner) owner.completed_count = (owner.completed_count || 0) + 1;
+  if (!owner) { owner = { id: project.owner_id, points: 0, completed_count: 0 }; db.users.push(owner); }
+  owner.completed_count = (owner.completed_count || 0) + 1;
+
+  // 3 — Close the project room (lock chat)
   if (db.project_rooms) {
     const room = db.project_rooms.find(r => r.project_id === projectId || r.id === project.room_id);
     if (room) {
+      room.status = 'closed';
+      room.closed_at = new Date().toISOString();
       if (!room.messages) room.messages = [];
       room.messages.push({
         id: uuidv4(), project_id: projectId, sender_id: 'system', sender_name: 'System',
-        content: `🎉 Project "${project.title}" marked complete! Credits distributed to all contributors.`,
+        content: `🎉 Project "${project.title}" marked complete! Credits distributed to all ${project.members.length} contributor(s). Chat is now closed.`,
         created_at: new Date().toISOString()
       });
     }
