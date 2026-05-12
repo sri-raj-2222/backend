@@ -1881,6 +1881,26 @@
   ],
   "notifications": [
     {
+      "id": "1ce66df2-f9b8-4621-8acf-bc3e9ce6c485",
+      "user_id": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+      "content": "chintu wants to join \"asdfasedf\" as Contributor 1",
+      "type": "project_request",
+      "reference_id": "5024c90c-ca53-4509-9fb8-f73a6efb630a",
+      "task_id": "5024c90c-ca53-4509-9fb8-f73a6efb630a",
+      "is_read": false,
+      "created_at": "2026-05-12T02:32:47.736Z"
+    },
+    {
+      "id": "65a04c7a-2dc3-4176-8543-b179d258a026",
+      "user_id": "27ae6dbf-9467-4de4-b96c-03e2ee8311f2",
+      "content": "⚠️ You have received an official warning from ShareSphere moderation. Reason: Harassment / Hate speech. Continued violations may result in a ban.",
+      "type": "moderation",
+      "reference_id": "4ff1c2d5-5d81-4363-a9d2-31b35b68f795",
+      "task_id": null,
+      "is_read": false,
+      "created_at": "2026-05-11T20:10:11.628Z"
+    },
+    {
       "id": "3e2a5437-4543-49d8-9bf1-0d56995da3f2",
       "user_id": "27ae6dbf-9467-4de4-b96c-03e2ee8311f2",
       "content": "Session complete: \"Cpp\". 5 credits deducted.",
@@ -2131,6 +2151,15 @@
       "type": "credit",
       "reason": "Earnings from broadcast: Cpp (1 attendees)",
       "created_at": "2026-05-11T15:16:34.403Z"
+    },
+    {
+      "id": "6d1b491f-679e-4a18-aa89-bfd925b30629",
+      "user_id": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+      "amount": -12,
+      "type": "project_escrow_hold",
+      "reason": "Escrow held for project: asdfasedf",
+      "project_id": "5024c90c-ca53-4509-9fb8-f73a6efb630a",
+      "created_at": "2026-05-12T02:31:16.810Z"
     }
   ],
   "connection_stages": [
@@ -2151,11 +2180,15 @@
       "reviews_count": 0,
       "rating": 0,
       "analysis": {},
-      "points": -10,
+      "points": 200,
       "avatar_url": null,
-      "title": "",
-      "location": "",
-      "bio": ""
+      "title": "fsd",
+      "location": "kakinada",
+      "bio": "asdfjmjn",
+      "status": "warned",
+      "warning_count": 1,
+      "linkedin": "",
+      "portfolio": "www.youtube.com"
     },
     {
       "id": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
@@ -2163,7 +2196,7 @@
       "rating": 0,
       "analysis": "",
       "enhancements": [],
-      "points": 10,
+      "points": 188,
       "completed_count": 0
     }
   ],
@@ -2230,6 +2263,13 @@
       "skill_name": "Data Analysis",
       "skill_type": "offering",
       "created_at": "2026-05-11T08:50:11.117Z"
+    },
+    {
+      "id": "079f47b8-384f-49d4-833e-0b76f788bf30",
+      "user_id": "27ae6dbf-9467-4de4-b96c-03e2ee8311f2",
+      "skill_name": "React",
+      "skill_type": "offering",
+      "created_at": "2026-05-12T04:18:27.653Z"
     }
   ],
   "match_requests": [],
@@ -2246,7 +2286,7 @@
       "permissions": [
         "all"
       ],
-      "last_login": "2026-05-11T15:24:16.892Z",
+      "last_login": "2026-05-12T03:42:34.004Z",
       "created_at": "2026-05-11T08:32:34.113Z"
     },
     {
@@ -2282,7 +2322,19 @@
       "created_at": "2026-05-11T08:32:34.113Z"
     }
   ],
-  "moderation_actions": [],
+  "moderation_actions": [
+    {
+      "id": "888da082-b595-470a-9197-a76a54870d39",
+      "report_id": "4ff1c2d5-5d81-4363-a9d2-31b35b68f795",
+      "admin_id": null,
+      "admin_email": "admin@sharesphere.com",
+      "target_user_id": "27ae6dbf-9467-4de4-b96c-03e2ee8311f2",
+      "action_type": "warn",
+      "duration_days": null,
+      "admin_note": "[admin@sharesphere.com] ff",
+      "created_at": "2026-05-11T20:10:10.926Z"
+    }
+  ],
   "broadcast_rooms": [
     {
       "id": "ae9fcfa7-f7bf-45fd-bed0-518e251dc89c",
@@ -2323,5 +2375,67 @@
       }
     }
   ],
-  "reports": []
+  "reports": [
+    {
+      "id": "4ff1c2d5-5d81-4363-a9d2-31b35b68f795",
+      "reporter_id": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+      "reported_user_id": "27ae6dbf-9467-4de4-b96c-03e2ee8311f2",
+      "chat_room_id": "46807b06-be1e-4b16-9113-03aa315f2559",
+      "reason_category": "Harassment / Hate speech",
+      "description": "User is being very rude in the chat. This is a test report to verify moderation actions.",
+      "evidence_message_ids": [],
+      "status": "resolved",
+      "is_local": true,
+      "created_at": "2026-05-11T18:45:00.000Z",
+      "updated_at": "2026-05-11T20:10:10.935Z"
+    }
+  ],
+  "projects": [
+    {
+      "id": "5024c90c-ca53-4509-9fb8-f73a6efb630a",
+      "title": "asdfasedf",
+      "description": "adsfasdfasdfasd",
+      "roles": [
+        {
+          "id": "1c43d29a-98e3-4e52-a6b8-daccc0a0d126",
+          "name": "Contributor 1",
+          "skills": [],
+          "credits": 6,
+          "filled": false
+        },
+        {
+          "id": "f3bad132-1013-4b7f-99d8-8f4fff8febec",
+          "name": "Contributor 2",
+          "skills": [],
+          "credits": 6,
+          "filled": false
+        }
+      ],
+      "min_team_size": 2,
+      "total_credits": 12,
+      "owner_id": "d59b3bee-0dad-462f-88c4-b7943c0aa259",
+      "owner_name": "ram",
+      "owner_avatar": null,
+      "deadline": "2026-05-12",
+      "status": "open",
+      "room_id": null,
+      "members": [],
+      "created_at": "2026-05-12T02:31:16.810Z"
+    }
+  ],
+  "project_requests": [
+    {
+      "id": "e84b82eb-6e68-4ba1-9635-e29290770994",
+      "project_id": "5024c90c-ca53-4509-9fb8-f73a6efb630a",
+      "role_id": "1c43d29a-98e3-4e52-a6b8-daccc0a0d126",
+      "role_name": "Contributor 1",
+      "contributor_id": "27ae6dbf-9467-4de4-b96c-03e2ee8311f2",
+      "contributor_name": "chintu",
+      "contributor_avatar": null,
+      "message": "",
+      "status": "pending",
+      "created_at": "2026-05-12T02:32:47.730Z"
+    }
+  ],
+  "project_rooms": []
 }

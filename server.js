@@ -148,6 +148,23 @@ io.on('connection', (socket) => {
     if (msg) io.to(`broadcast-chat-${broadcastId}`).emit('broadcast_chat:message', msg);
   });
 
+  // ── Project Composite Chat ──────────────────────────────────────────────────
+  socket.on('project:join', (projectId) => {
+    socket.join(`project-${projectId}`);
+  });
+
+  socket.on('project:message', ({ projectId, senderId, senderName, content }) => {
+    if (!projectId || !content?.trim()) return;
+    const msg = db.addProjectChatMessage(projectId, { senderId, senderName, content: content.trim() });
+    if (msg) io.to(`project-${projectId}`).emit('project:message', msg);
+  });
+
+  socket.on('project:notes', ({ projectId, notes }) => {
+    if (!projectId) return;
+    db.saveProjectNotes(projectId, notes);
+    socket.to(`project-${projectId}`).emit('project:notes_update', { projectId, notes });
+  });
+
   socket.on('disconnect', () => {
     for (const [userId, socketId] of onlineUsers.entries()) {
       if (socketId === socket.id) { onlineUsers.delete(userId); break; }
@@ -664,11 +681,11 @@ app.post('/api/broadcasts/:id/end', (req, res) => {
     if (!broadcast) return res.status(404).json({ error: 'Broadcast not found' });
     io.emit('broadcast:completed', broadcast);
     const attendedCount = (attendances || []).filter(a => a.attended).length;
-    const totalEarned = attendedCount * (broadcast.reward_credits || 0);
-    db.addNotification({ user_id: broadcast.posted_by, content: `Session ended: "${broadcast.title}". ${attendedCount} attended. You earned ${totalEarned} credits.`, type: 'broadcast_ended', task_id: broadcast.id });
+    const totalAwarded = attendedCount * (broadcast.reward_credits || 0);
+    db.addNotification({ user_id: broadcast.posted_by, content: `Session ended: "${broadcast.title}". ${attendedCount} attended. ${totalAwarded} credits awarded to attendees.`, type: 'broadcast_ended', task_id: broadcast.id });
     (attendances || []).forEach(a => {
       if (a.attended && broadcast.reward_credits > 0) {
-        db.addNotification({ user_id: a.user_id, content: `Session complete: "${broadcast.title}". ${broadcast.reward_credits} credits deducted.`, type: 'broadcast_ended', task_id: broadcast.id });
+        db.addNotification({ user_id: a.user_id, content: `Session complete: "${broadcast.title}". You earned ${broadcast.reward_credits} credits!`, type: 'broadcast_ended', task_id: broadcast.id });
         io.to(a.user_id).emit('broadcast:completed', broadcast);
       }
     });
@@ -886,8 +903,16 @@ async function analyzeUserProfile(userId) {
 app.get('/api/user/:userId/profile', (req, res) => {
   try {
     const dbData = db.readDb();
-    const profile = dbData.users.find(u => u.id === req.params.userId);
-    res.json(profile || { id: req.params.userId, analysis: "No analysis available yet." });
+    let profile = dbData.users.find(u => u.id === req.params.userId);
+    if (!profile) {
+      profile = { id: req.params.userId, points: 200, reviews_count: 0, rating: 0, analysis: {}, completed_count: 0 };
+      dbData.users.push(profile);
+      db.writeDb(dbData);
+    } else if (profile.points === undefined || profile.points === null) {
+      profile.points = 200;
+      db.writeDb(dbData);
+    }
+    res.json(profile);
   } catch (err) { res.status(500).json({ error: err.message }); }
 });
 
@@ -1803,34 +1828,35 @@ app.get('/api/admin/reports/:id', async (req, res) => {
     const localDbData = db.readDb();
     let report = null;
 
-    // ── 1. Fetch plain report (Supabase then Local Fallback) ───────────────
-    if (supabase) {
-      const { data, error } = await supabase.from('reports').select('*').eq('id', req.params.id).single();
-      if (!error) report = data;
+    // ── 1. Fetch plain report: local DB first (primary), Supabase fallback ──
+    const localReport = (localDbData.reports || []).find(r => r.id === req.params.id);
+    if (localReport) {
+      report = { ...localReport, is_local: true };
+    } else {
+      const localDispute = (localDbData.disputes || []).find(d => d.id === req.params.id);
+      if (localDispute) {
+        const room = (localDbData.rooms || []).find(r => r.id === localDispute.room_id);
+        const reportedId = room?.participants?.find(uid => uid !== localDispute.raised_by);
+        report = {
+          id: localDispute.id,
+          reporter_id: localDispute.raised_by,
+          reported_user_id: reportedId || null,
+          chat_room_id: localDispute.room_id,
+          reason_category: localDispute.reason || 'Exchange Dispute',
+          description: localDispute.description,
+          status: localDispute.status || 'pending',
+          created_at: localDispute.created_at,
+          is_local: true
+        };
+      }
     }
 
-    if (!report) {
-      const localReport = (localDbData.reports || []).find(r => r.id === req.params.id);
-      if (localReport) {
-        report = { ...localReport, is_local: true };
-      } else {
-        const localDispute = (localDbData.disputes || []).find(d => d.id === req.params.id);
-        if (localDispute) {
-          const room = (localDbData.rooms || []).find(r => r.id === localDispute.room_id);
-          const reportedId = room?.participants?.find(uid => uid !== localDispute.raised_by);
-          report = {
-            id: localDispute.id,
-            reporter_id: localDispute.raised_by,
-            reported_user_id: reportedId || null,
-            chat_room_id: localDispute.room_id,
-            reason_category: localDispute.reason || 'Exchange Dispute',
-            description: localDispute.description,
-            status: localDispute.status || 'pending',
-            created_at: localDispute.created_at,
-            is_local: true
-          };
-        }
-      }
+    // Supabase fallback for reports that only exist there
+    if (!report && supabase) {
+      try {
+        const { data, error } = await supabase.from('reports').select('*').eq('id', req.params.id).single();
+        if (!error && data) report = data;
+      } catch (e) { console.warn('[report detail] Supabase fetch failed:', e.message); }
     }
 
     if (!report) return res.status(404).json({ error: 'Report not found' });
@@ -1891,36 +1917,81 @@ app.get('/api/admin/reports/:id', async (req, res) => {
     }
 
     // Prior reports AGAINST the reported user
-    const { data: priorReports } = await supabase
-      .from('reports')
-      .select('id, reason_category, status, created_at')
-      .eq('reported_user_id', report.reported_user_id)
-      .neq('id', report.id)
-      .order('created_at', { ascending: false });
+    let priorReports = [];
+    if (supabase) {
+      try {
+        const { data } = await supabase
+          .from('reports')
+          .select('id, reason_category, status, created_at')
+          .eq('reported_user_id', report.reported_user_id)
+          .neq('id', report.id)
+          .order('created_at', { ascending: false });
+        priorReports = data || [];
+      } catch (e) { console.warn('[report detail] priorReports fetch failed:', e.message); }
+    }
+    // Merge local prior reports/disputes
+    const localPrior = [
+      ...(localDbData.reports || []),
+      ...(localDbData.disputes || []).map(d => {
+        const room = (localDbData.rooms || []).find(r => r.id === d.room_id);
+        const rId = room?.participants?.find(uid => uid !== d.raised_by);
+        return { id: d.id, reported_user_id: rId, reason_category: d.reason || 'Exchange Dispute', status: d.status || 'pending', created_at: d.created_at };
+      })
+    ].filter(r => r.reported_user_id === report.reported_user_id && r.id !== report.id);
+    priorReports = [...priorReports, ...localPrior].sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
 
     // Moderation history — merge Supabase (legacy) + local DB (current)
-    const { data: supabaseActions } = await supabase
-      .from('moderation_actions')
-      .select('*')
-      .eq('report_id', report.id)
-      .order('created_at', { ascending: false });
+    let supabaseActions = [];
+    if (supabase) {
+      try {
+        const { data } = await supabase
+          .from('moderation_actions')
+          .select('*')
+          .eq('report_id', report.id)
+          .order('created_at', { ascending: false });
+        supabaseActions = data || [];
+      } catch (e) { console.warn('[report detail] moderationActions fetch failed:', e.message); }
+    }
     const localActions = db.getModerationActionsForReport(report.id);
-    const actions = [...(supabaseActions || []), ...localActions]
+    const actions = [...supabaseActions, ...localActions]
       .sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
 
-    // Distinct reporter count
-    const { data: allUserReports } = await supabase
-      .from('reports')
-      .select('reporter_id')
-      .eq('reported_user_id', report.reported_user_id)
-      .in('status', ['pending', 'under_review']);
-    const distinctReporterCount = new Set((allUserReports || []).map(r => r.reporter_id)).size;
+    // Distinct reporter count — from all local + Supabase reports
+    const allLocalReports = [
+      ...(localDbData.reports || []),
+      ...(localDbData.disputes || []).map(d => {
+        const room = (localDbData.rooms || []).find(r => r.id === d.room_id);
+        const rId = room?.participants?.find(uid => uid !== d.raised_by);
+        return { reporter_id: d.raised_by, reported_user_id: rId, status: d.status || 'pending' };
+      })
+    ];
+    let allUserReports = allLocalReports.filter(r =>
+      r.reported_user_id === report.reported_user_id &&
+      ['pending', 'under_review'].includes(r.status)
+    );
+    if (supabase) {
+      try {
+        const { data } = await supabase
+          .from('reports')
+          .select('reporter_id')
+          .eq('reported_user_id', report.reported_user_id)
+          .in('status', ['pending', 'under_review']);
+        allUserReports = [...allUserReports, ...(data || [])];
+      } catch (e) { /* non-critical */ }
+    }
+    const distinctReporterCount = new Set(allUserReports.map(r => r.reporter_id)).size;
 
-    // Reporter's own filing count (how many reports they have filed total)
-    const { count: reporterFiledCount } = await supabase
-      .from('reports')
-      .select('id', { count: 'exact', head: true })
-      .eq('reporter_id', report.reporter_id);
+    // Reporter's own filing count
+    let reporterFiledCount = allLocalReports.filter(r => r.reporter_id === report.reporter_id).length;
+    if (supabase) {
+      try {
+        const { count } = await supabase
+          .from('reports')
+          .select('id', { count: 'exact', head: true })
+          .eq('reporter_id', report.reporter_id);
+        reporterFiledCount += (count || 0);
+      } catch (e) { /* non-critical */ }
+    }
 
     res.json({
       report,
@@ -1938,10 +2009,8 @@ app.get('/api/admin/reports/:id', async (req, res) => {
 
 // POST /api/admin/reports/:id/action — dismiss / warn / temp_ban / permanent_ban
 app.post('/api/admin/reports/:id/action', async (req, res) => {
+  console.log('>>> [ACTION ROUTE ENTERED] ID:', req.params.id);
   try {
-    if (!supabase) return res.status(503).json({ error: 'Supabase not configured' });
-
-    // Validate report ID is a valid UUID before hitting the DB
     const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
     if (!UUID_RE.test(req.params.id)) {
       return res.status(400).json({ error: 'Invalid report ID format' });
@@ -1960,20 +2029,57 @@ app.post('/api/admin/reports/:id/action', async (req, res) => {
     if (action_type === 'temp_ban' && (!duration_days || duration_days <= 0))
       return res.status(400).json({ error: 'duration_days required for temp_ban' });
 
-    // Fetch report from Supabase
-    const { data: report, error: repErr } = await supabase
-      .from('reports').select('*').eq('id', req.params.id).single();
-    if (repErr || !report) return res.status(404).json({ error: 'Report not found' });
+    // ── Fetch report: local DB first (primary), Supabase fallback ────────
+    let report = null;
+    let isLocal = false;
+
+    const localDbData = db.readDb();
+    console.log('[ACTION DEBUG] Looking for report id:', req.params.id);
+    console.log('[ACTION DEBUG] Local reports count:', (localDbData.reports || []).length);
+    console.log('[ACTION DEBUG] Local report IDs:', (localDbData.reports || []).map(r => r.id));
+
+    const localReport = (localDbData.reports || []).find(r => r.id === req.params.id);
+    if (localReport) {
+      report = localReport; isLocal = true;
+      console.log('[ACTION DEBUG] Found in local reports');
+    } else {
+      const localDispute = (localDbData.disputes || []).find(d => d.id === req.params.id);
+      if (localDispute) {
+        const room = (localDbData.rooms || []).find(r => r.id === localDispute.room_id);
+        const reportedId = room?.participants?.find(uid => uid !== localDispute.raised_by);
+        report = {
+          id: localDispute.id,
+          reporter_id: localDispute.raised_by,
+          reported_user_id: reportedId || null,
+          reason_category: localDispute.reason || 'Exchange Dispute',
+          description: localDispute.description,
+          status: localDispute.status || 'pending',
+        };
+        isLocal = true;
+        console.log('[ACTION DEBUG] Found in local disputes');
+      } else {
+        console.log('[ACTION DEBUG] Not found in local DB');
+      }
+    }
+
+    // Supabase fallback for reports that only exist in Supabase
+    if (!report && supabase) {
+      try {
+        const { data, error } = await supabase
+          .from('reports').select('*').eq('id', req.params.id).single();
+        if (!error && data) { report = data; console.log('[ACTION DEBUG] Found in Supabase'); }
+        else console.log('[ACTION DEBUG] Supabase error or no data:', error?.message);
+      } catch (e) { console.warn('[action] Supabase report fetch failed:', e.message); }
+    }
+
+    if (!report) return res.status(404).json({ error: 'Report not found' });
 
     const targetId = report.reported_user_id;
 
-    // ── Store moderation action in LOCAL DB only ───────────────────────────
-    // This avoids the Supabase `moderation_actions.admin_id` FK constraint
-    // which requires a UUID from the `profiles` table. Local admins are not
-    // Supabase auth users, so we never touch that Supabase table for actions.
+    // ── Store moderation action in LOCAL DB ───────────────────────────────
     const action = db.addModerationAction({
       report_id:       req.params.id,
-      admin_id:        null, // local admin — no Supabase profile ID
+      admin_id:        null,
       admin_email:     adminEmail,
       target_user_id:  targetId,
       action_type,
@@ -1981,22 +2087,51 @@ app.post('/api/admin/reports/:id/action', async (req, res) => {
       admin_note:      `[${adminEmail}] ${admin_note}`,
     });
 
-    // ── Update report status in Supabase ─────────────────────────────────
+    // ── Update report status ──────────────────────────────────────────────
     const newReportStatus = action_type === 'dismiss' ? 'dismissed' : 'resolved';
-    const { error: updateErr } = await supabase
-      .from('reports')
-      .update({ status: newReportStatus, updated_at: new Date().toISOString() })
-      .eq('id', req.params.id);
-    if (updateErr) console.warn('[action] report status update failed:', updateErr.message);
 
-    // ── Apply profile changes in Supabase ─────────────────────────────────
+    // Always update local DB first — guarantees status persists even if Supabase update fails
+    {
+      const localDbData = db.readDb();
+      const lr = (localDbData.reports || []).find(r => r.id === req.params.id);
+      const ld = (localDbData.disputes || []).find(d => d.id === req.params.id);
+      if (lr) { lr.status = newReportStatus; lr.updated_at = new Date().toISOString(); }
+      if (ld) { ld.status = newReportStatus; ld.updated_at = new Date().toISOString(); }
+      if (!lr && !ld) {
+        // Supabase-only report — save a shadow record so status change persists on reload
+        if (!localDbData.reports) localDbData.reports = [];
+        localDbData.reports.push({
+          id: req.params.id,
+          reporter_id: report.reporter_id,
+          reported_user_id: report.reported_user_id,
+          chat_room_id: report.chat_room_id || null,
+          reason_category: report.reason_category,
+          description: report.description,
+          status: newReportStatus,
+          created_at: report.created_at,
+          updated_at: new Date().toISOString(),
+        });
+      }
+      db.writeDb(localDbData);
+    }
+
+    // Also sync to Supabase if connected
+    if (supabase && !isLocal) {
+      try {
+        const { error: updateErr } = await supabase
+          .from('reports')
+          .update({ status: newReportStatus, updated_at: new Date().toISOString() })
+          .eq('id', req.params.id);
+        if (updateErr) console.warn('[action] Supabase report status update failed:', updateErr.message);
+      } catch (e) { console.warn('[action] Supabase update error:', e.message); }
+    }
+
+    // ── Apply user profile changes ────────────────────────────────────────
     let profileUpdate = {};
     let userNotifContent = null;
 
     if (action_type === 'warn') {
-      const { data: prof } = await supabase
-        .from('profiles').select('warning_count').eq('id', targetId).single();
-      profileUpdate = { status: 'warned', warning_count: (prof?.warning_count || 0) + 1 };
+      profileUpdate = { status: 'warned' };
       userNotifContent = `⚠️ You have received an official warning from ShareSphere moderation. Reason: ${report.reason_category}. Continued violations may result in a ban.`;
     } else if (action_type === 'temp_ban') {
       const expiresAt = new Date(Date.now() + Number(duration_days) * 86400000).toISOString();
@@ -2007,10 +2142,28 @@ app.post('/api/admin/reports/:id/action', async (req, res) => {
       userNotifContent = `🚫 Your account has been permanently suspended. Reason: ${report.reason_category}.`;
     }
 
-    if (Object.keys(profileUpdate).length > 0) {
-      const { error: profErr } = await supabase
-        .from('profiles').update(profileUpdate).eq('id', targetId);
-      if (profErr) console.warn('[action] profile update failed:', profErr.message);
+    if (targetId && Object.keys(profileUpdate).length > 0) {
+      // Apply in Supabase if available
+      if (supabase) {
+        try {
+          const { data: prof } = await supabase
+            .from('profiles').select('warning_count').eq('id', targetId).single();
+          const sbUpdate = action_type === 'warn'
+            ? { status: 'warned', warning_count: (prof?.warning_count || 0) + 1 }
+            : profileUpdate;
+          await supabase.from('profiles').update(sbUpdate).eq('id', targetId);
+        } catch (e) { console.warn('[action] Supabase profile update failed:', e.message); }
+      }
+      // Always apply in local DB so ban takes effect immediately
+      const localDbData = db.readDb();
+      let localUser = (localDbData.users || []).find(u => u.id === targetId);
+      if (!localUser) {
+        localUser = { id: targetId, points: 0, reviews_count: 0, rating: 0 };
+        localDbData.users.push(localUser);
+      }
+      Object.assign(localUser, profileUpdate);
+      if (action_type === 'warn') localUser.warning_count = (localUser.warning_count || 0) + 1;
+      db.writeDb(localDbData);
     }
 
     // ── In-app notification for the reported user ─────────────────────────
@@ -2279,6 +2432,152 @@ syncFromSupabase();
 app.post('/api/sync-from-supabase', async (req, res) => {
   const result = await syncFromSupabase();
   res.json(result);
+});
+
+// ─── Project Composite ────────────────────────────────────────────────────────
+app.post('/api/projects', (req, res) => {
+  try {
+    const project = db.createProject(req.body);
+    io.emit('project:posted', { project });
+    res.json(project);
+  } catch (err) { res.status(400).json({ error: err.message }); }
+});
+
+app.get('/api/projects', (req, res) => {
+  try {
+    const { status } = req.query;
+    res.json(db.getAllProjects({ status: status || 'open' }));
+  } catch (err) { res.status(500).json({ error: err.message }); }
+});
+
+app.get('/api/projects/:projectId', async (req, res) => {
+  try {
+    const project = db.getProjectById(req.params.projectId);
+    if (!project) return res.status(404).json({ error: 'Project not found' });
+    
+    let requests = db.getProjectRequests(req.params.projectId);
+    const localDbData = db.readDb();
+    
+    // Enrich requests with skills and their task posts
+    requests = await Promise.all(requests.map(async (r) => {
+      let skills = [];
+      let posts = [];
+      
+      if (supabase) {
+        const [sRes, tRes] = await Promise.all([
+          supabase.from('user_skills').select('skill_name').eq('user_id', r.contributor_id),
+          supabase.from('tasks').select('title, offering, wanting').eq('user_id', r.contributor_id).limit(3)
+        ]);
+        if (sRes.data) skills = sRes.data.map(s => s.skill_name);
+        if (tRes.data) posts = tRes.data.map(t => t.title || `${t.offering} for ${t.wanting}`);
+      }
+      
+      // Fallback/Merge with local data
+      const localSkills = (localDbData.user_skills || [])
+        .filter(s => s.user_id === r.contributor_id)
+        .map(s => s.skill_name || s.name);
+        
+      const localPosts = (localDbData.tasks || [])
+        .filter(t => t.posted_by === r.contributor_id)
+        .map(t => t.title || `${t.offering} for ${t.wanting}`)
+        .slice(0, 3);
+      
+      return { 
+        ...r, 
+        skills: [...new Set([...skills, ...localSkills])],
+        posts: [...new Set([...posts, ...localPosts])].slice(0, 5) 
+      };
+    }));
+    
+    res.json({ ...project, requests });
+  } catch (err) { res.status(500).json({ error: err.message }); }
+});
+
+app.get('/api/user/:userId/projects', (req, res) => {
+  try {
+    res.json(db.getUserProjects(req.params.userId));
+  } catch (err) { res.status(500).json({ error: err.message }); }
+});
+
+app.post('/api/projects/:projectId/request', (req, res) => {
+  try {
+    const request = db.createProjectRequest({ ...req.body, project_id: req.params.projectId });
+    const project = db.getProjectById(req.params.projectId);
+    if (project) {
+      db.addNotification({
+        user_id: project.owner_id,
+        content: `${req.body.contributor_name || 'Someone'} wants to join "${project.title}" as ${req.body.role_name}`,
+        type: 'project_request', reference_id: req.params.projectId, task_id: req.params.projectId
+      });
+      io.to(project.owner_id).emit('project:new_request', { project_id: project.id, request });
+    }
+    res.json(request);
+  } catch (err) { res.status(400).json({ error: err.message }); }
+});
+
+app.get('/api/projects/:projectId/requests', (req, res) => {
+  try {
+    res.json(db.getProjectRequests(req.params.projectId));
+  } catch (err) { res.status(500).json({ error: err.message }); }
+});
+
+app.patch('/api/projects/:projectId/requests/:requestId', (req, res) => {
+  try {
+    const { status } = req.body;
+    const result = db.updateProjectRequestStatus(req.params.requestId, status, { project_id: req.params.projectId });
+    if (!result.request) return res.status(404).json({ error: 'Request not found' });
+    const project = db.getProjectById(req.params.projectId);
+    if (project) {
+      db.addNotification({
+        user_id: result.request.contributor_id,
+        content: status === 'accepted'
+          ? `You've been accepted to "${project.title}" as ${result.request.role_name}!`
+          : `Your request to join "${project.title}" as ${result.request.role_name} was not accepted.`,
+        type: 'project_request_update', reference_id: req.params.projectId, task_id: req.params.projectId
+      });
+      io.to(result.request.contributor_id).emit('project:request_updated', { project_id: project.id, status, request: result.request });
+    }
+    if (result.room) {
+      result.room.participants.forEach(uid => {
+        io.to(uid).emit('project:team_assembled', { project_id: req.params.projectId, room_id: result.room.id });
+      });
+    }
+    res.json(result);
+  } catch (err) { res.status(400).json({ error: err.message }); }
+});
+
+app.get('/api/projects/:projectId/room', (req, res) => {
+  try {
+    const room = db.getProjectRoom(req.params.projectId);
+    if (!room) return res.status(404).json({ error: 'Room not found — team not yet assembled' });
+    res.json(room);
+  } catch (err) { res.status(500).json({ error: err.message }); }
+});
+
+app.patch('/api/projects/:projectId/room/notes', (req, res) => {
+  try {
+    db.saveProjectNotes(req.params.projectId, req.body.notes || '');
+    res.json({ ok: true });
+  } catch (err) { res.status(500).json({ error: err.message }); }
+});
+
+app.post('/api/projects/:projectId/complete', (req, res) => {
+  try {
+    const project = db.completeProject(req.params.projectId);
+    project.members.forEach(m => {
+      io.to(m.user_id).emit('project:completed', { project_id: project.id, title: project.title, credits: m.credits_allocated });
+    });
+    io.to(`project-${project.id}`).emit('project:completed', { project_id: project.id });
+    res.json(project);
+  } catch (err) { res.status(400).json({ error: err.message }); }
+});
+
+app.post('/api/projects/:projectId/cancel', (req, res) => {
+  try {
+    const project = db.cancelProject(req.params.projectId);
+    io.to(`project-${project.id}`).emit('project:cancelled', { project_id: project.id });
+    res.json(project);
+  } catch (err) { res.status(400).json({ error: err.message }); }
 });
 
 // ─── SERVER START ─────────────────────────────────────────────────────────────

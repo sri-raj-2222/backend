@@ -29,6 +29,9 @@ function initDb() {
       user_skills: [],
       match_requests: [],
       reports: [],
+      projects: [],
+      project_requests: [],
+      project_rooms: [],
       admins: [
         {
           id: '1',
@@ -105,7 +108,7 @@ function readDb() {
     'rooms', 'notifications', 'ratings', 'broadcasts', 'broadcast_requests',
     'broadcast_enrollments', 'credit_transactions', 'broadcast_rooms',
     'connection_stages', 'reviews', 'disputes', 'users', 'user_skills', 'match_requests', 'admins',
-    'moderation_actions', 'reports'
+    'moderation_actions', 'reports', 'projects', 'project_requests', 'project_rooms'
   ];
   if (!db.admins || db.admins.length === 0) {
     db.admins = [
@@ -576,7 +579,7 @@ function enrollInBroadcast({ broadcast_id, user_id, userName, userAvatar }) {
 
   // Credit check
   const learner = db.users.find(u => u.id === user_id);
-  const balance = learner ? (learner.points || 0) : 0;
+  const balance = learner ? (learner.points ?? 200) : 200;
   if (broadcast.reward_credits > 0 && balance < broadcast.reward_credits) {
     return { error: 'Insufficient credits to join this class' };
   }
@@ -717,7 +720,7 @@ function autoUpdateBroadcastStatuses() {
 function getUserBalance(userId) {
   const dbData = readDb();
   const user = (dbData.users || []).find(u => u.id === userId);
-  return user ? (user.points || 0) : 0;
+  return user ? (user.points ?? 200) : 200;
 }
 
 function getUserEnrollments(userId) {
@@ -758,38 +761,40 @@ function endBroadcast(id, attendances) {
     if (a.attended) {
       attendedCount++;
       if (broadcast.reward_credits > 0) {
+        // Attendee EARNS credits set by the broadcaster
         db.credit_transactions.push({
           id: uuidv4(),
           broadcast_id: id,
           user_id: a.user_id,
-          amount: -broadcast.reward_credits,
-          type: 'debit',
+          amount: broadcast.reward_credits,
+          type: 'credit',
           reason: `Attended broadcast: ${broadcast.title}`,
           created_at: new Date().toISOString()
         });
         const learner = db.users.find(u => u.id === a.user_id);
-        if (learner) learner.points = (learner.points || 0) - broadcast.reward_credits;
+        if (learner) learner.points = (learner.points || 0) + broadcast.reward_credits;
       }
     }
   });
 
-  const totalEarned = attendedCount * (broadcast.reward_credits || 0);
-  if (totalEarned > 0) {
+  const totalAwarded = attendedCount * (broadcast.reward_credits || 0);
+  if (totalAwarded > 0) {
+    // Broadcaster PAYS the total credits awarded to attendees
     db.credit_transactions.push({
       id: uuidv4(),
       broadcast_id: id,
       user_id: broadcast.posted_by,
-      amount: totalEarned,
-      type: 'credit',
-      reason: `Earnings from broadcast: ${broadcast.title} (${attendedCount} attendees)`,
+      amount: -totalAwarded,
+      type: 'debit',
+      reason: `Credits awarded to attendees of: ${broadcast.title} (${attendedCount} attended)`,
       created_at: new Date().toISOString()
     });
     let tutor = db.users.find(u => u.id === broadcast.posted_by);
     if (!tutor) {
-      tutor = { id: broadcast.posted_by, reviews_count: 0, rating: 0, analysis: '', enhancements: [], points: 0, completed_count: 0 };
+      tutor = { id: broadcast.posted_by, reviews_count: 0, rating: 0, analysis: '', enhancements: [], points: 200, completed_count: 0 };
       db.users.push(tutor);
     }
-    tutor.points = (tutor.points || 0) + totalEarned;
+    tutor.points = (tutor.points || 0) - totalAwarded;
   }
 
   writeDb(db);
@@ -952,7 +957,7 @@ function saveReview(reviewData) {
       participants.forEach(pid => {
         let userProfile = db.users.find(u => u.id === pid);
         if (!userProfile) {
-          userProfile = { id: pid, reviews_count: 0, rating: 0, analysis: '', enhancements: [], points: 0, completed_count: 0 };
+          userProfile = { id: pid, reviews_count: 0, rating: 0, analysis: '', enhancements: [], points: 200, completed_count: 0 };
           db.users.push(userProfile);
         }
         userProfile.points = (userProfile.points || 0) + 50;
@@ -1006,7 +1011,7 @@ function addNote(userId, noteData) {
   const db = readDb();
   let user = db.users.find(u => u.id === userId);
   if (!user) {
-    user = { id: userId, reviews_count: 0, rating: 0, analysis: {}, enhancements: [], points: 0, uploads: [] };
+    user = { id: userId, reviews_count: 0, rating: 0, analysis: {}, enhancements: [], points: 200, uploads: [] };
     db.users.push(user);
   }
   if (!user.uploads) user.uploads = [];
@@ -1225,7 +1230,7 @@ function updateUserProfile(userId, profileData) {
   const db = readDb();
   let user = db.users.find(u => u.id === userId);
   if (!user) {
-    user = { id: userId, reviews_count: 0, rating: 0, analysis: {}, points: 0 };
+    user = { id: userId, reviews_count: 0, rating: 0, analysis: {}, points: 200 };
     db.users.push(user);
   }
   Object.assign(user, profileData);
@@ -1291,6 +1296,235 @@ function removeAdmin(email) {
   return before !== db.admins.length;
 }
 
+// ─── Project Composite ────────────────────────────────────────────────────────
+function createProject({ title, description, roles, min_team_size, total_credits, deadline, owner_id, owner_name, owner_avatar }) {
+  const db = readDb();
+  let owner = db.users.find(u => u.id === owner_id);
+  if (!owner) {
+    owner = { id: owner_id, reviews_count: 0, rating: 0, analysis: {}, points: 200, completed_count: 0 };
+    db.users.push(owner);
+  }
+  if ((owner.points || 0) < total_credits) throw new Error('Insufficient credits to post this project');
+  owner.points = (owner.points || 0) - total_credits;
+
+  const project = {
+    id: uuidv4(),
+    title, description,
+    roles: (roles || []).map(r => ({ ...r, id: r.id || uuidv4(), filled: false })),
+    min_team_size: min_team_size || 3,
+    total_credits,
+    owner_id,
+    owner_name: owner_name || 'User',
+    owner_avatar: owner_avatar || null,
+    deadline: deadline || null,
+    status: 'open',
+    room_id: null,
+    members: [],
+    created_at: new Date().toISOString()
+  };
+  if (!db.projects) db.projects = [];
+  db.projects.unshift(project);
+
+  if (!db.credit_transactions) db.credit_transactions = [];
+  db.credit_transactions.push({
+    id: uuidv4(), user_id: owner_id, amount: -total_credits,
+    type: 'project_escrow_hold',
+    reason: `Escrow held for project: ${title}`,
+    project_id: project.id, created_at: new Date().toISOString()
+  });
+  writeDb(db);
+  return project;
+}
+
+function getAllProjects({ status } = {}) {
+  const db = readDb();
+  let projects = db.projects || [];
+  if (status) projects = projects.filter(p => p.status === status);
+  return projects.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+}
+
+function getProjectById(projectId) {
+  const db = readDb();
+  return (db.projects || []).find(p => p.id === projectId) || null;
+}
+
+function getUserProjects(userId) {
+  const db = readDb();
+  const owned = (db.projects || []).filter(p => p.owner_id === userId);
+  const member = (db.projects || []).filter(p => p.members && p.members.some(m => m.user_id === userId));
+  const requests = (db.project_requests || []).filter(r => r.contributor_id === userId).map(r => {
+    const project = (db.projects || []).find(p => p.id === r.project_id);
+    return { ...r, project: project || null };
+  });
+  return { owned, member, requests };
+}
+
+function createProjectRequest({ project_id, role_id, role_name, contributor_id, contributor_name, contributor_avatar, message }) {
+  const db = readDb();
+  if (!db.project_requests) db.project_requests = [];
+  const existing = db.project_requests.find(r =>
+    r.project_id === project_id && r.contributor_id === contributor_id
+  );
+  if (existing) return existing;
+  const request = {
+    id: uuidv4(), project_id, role_id, role_name,
+    contributor_id, contributor_name: contributor_name || 'User',
+    contributor_avatar: contributor_avatar || null,
+    message: message || '', status: 'pending',
+    created_at: new Date().toISOString()
+  };
+  db.project_requests.unshift(request);
+  writeDb(db);
+  return request;
+}
+
+function getProjectRequests(projectId) {
+  const db = readDb();
+  return (db.project_requests || []).filter(r => r.project_id === projectId);
+}
+
+function _assembleProjectRoom(db, project) {
+  if (!db.project_rooms) db.project_rooms = [];
+  const participants = [project.owner_id, ...project.members.map(m => m.user_id)];
+  const participantInfo = { [project.owner_id]: { name: project.owner_name, avatar_url: project.owner_avatar, role: 'Owner' } };
+  project.members.forEach(m => { participantInfo[m.user_id] = { name: m.user_name, avatar_url: m.user_avatar, role: m.role_name }; });
+  const room = {
+    id: uuidv4(), project_id: project.id, title: project.title,
+    notes: '', messages: [], participants, participant_info: participantInfo,
+    created_at: new Date().toISOString(), last_message: null
+  };
+  db.project_rooms.push(room);
+  return room;
+}
+
+function updateProjectRequestStatus(requestId, status, { project_id } = {}) {
+  const db = readDb();
+  if (!db.project_requests) db.project_requests = [];
+  const request = db.project_requests.find(r => r.id === requestId);
+  if (!request) return { request: null, project: null, room: null };
+  request.status = status;
+  let project = null;
+  let room = null;
+  if (status === 'accepted') {
+    project = (db.projects || []).find(p => p.id === (request.project_id || project_id));
+    if (project) {
+      const role = project.roles.find(r => r.id === request.role_id);
+      if (role) role.filled = true;
+      if (!project.members) project.members = [];
+      if (!project.members.some(m => m.user_id === request.contributor_id)) {
+        project.members.push({
+          id: uuidv4(), user_id: request.contributor_id, user_name: request.contributor_name,
+          user_avatar: request.contributor_avatar, role_id: request.role_id, role_name: request.role_name,
+          credits_allocated: role ? role.credits : 0, joined_at: new Date().toISOString()
+        });
+      }
+      db.project_requests.forEach(r => {
+        if (r.project_id === request.project_id && r.role_id === request.role_id && r.id !== requestId && r.status === 'pending')
+          r.status = 'rejected';
+      });
+      if (project.members.length >= project.min_team_size && !project.room_id) {
+        room = _assembleProjectRoom(db, project);
+        project.room_id = room.id;
+        project.status = 'in_progress';
+      }
+    }
+  }
+  writeDb(db);
+  return { request, project, room };
+}
+
+function getProjectRoom(projectId) {
+  const db = readDb();
+  if (!db.project_rooms) return null;
+  const room = db.project_rooms.find(r => r.project_id === projectId);
+  if (room) return room;
+  const project = (db.projects || []).find(p => p.id === projectId);
+  if (project && project.room_id) return db.project_rooms.find(r => r.id === project.room_id) || null;
+  return null;
+}
+
+function addProjectChatMessage(projectId, { senderId, senderName, content }) {
+  const db = readDb();
+  if (!db.project_rooms) return null;
+  const room = db.project_rooms.find(r => r.project_id === projectId);
+  if (!room) return null;
+  const message = {
+    id: uuidv4(), project_id: projectId,
+    sender_id: senderId, sender_name: senderName, content,
+    created_at: new Date().toISOString()
+  };
+  if (!room.messages) room.messages = [];
+  room.messages.push(message);
+  room.last_message = { content, sender_name: senderName, created_at: message.created_at };
+  writeDb(db);
+  return message;
+}
+
+function saveProjectNotes(projectId, notes) {
+  const db = readDb();
+  if (!db.project_rooms) return null;
+  const room = db.project_rooms.find(r => r.project_id === projectId);
+  if (room) { room.notes = notes; writeDb(db); }
+  return room;
+}
+
+function completeProject(projectId) {
+  const db = readDb();
+  const project = (db.projects || []).find(p => p.id === projectId);
+  if (!project) throw new Error('Project not found');
+  if (project.status === 'completed') throw new Error('Already completed');
+  project.status = 'completed';
+  project.completed_at = new Date().toISOString();
+  if (!db.credit_transactions) db.credit_transactions = [];
+  project.members.forEach(member => {
+    const credits = member.credits_allocated || 0;
+    if (credits <= 0) return;
+    let user = db.users.find(u => u.id === member.user_id);
+    if (!user) { user = { id: member.user_id, points: 200, completed_count: 0, rating: 0, reviews_count: 0 }; db.users.push(user); }
+    user.points = (user.points || 0) + credits;
+    user.completed_count = (user.completed_count || 0) + 1;
+    db.credit_transactions.push({
+      id: uuidv4(), user_id: member.user_id, amount: credits, type: 'project_payout',
+      reason: `Payment for "${member.role_name}" in: ${project.title}`,
+      project_id: projectId, created_at: new Date().toISOString()
+    });
+  });
+  let owner = db.users.find(u => u.id === project.owner_id);
+  if (owner) owner.completed_count = (owner.completed_count || 0) + 1;
+  if (db.project_rooms) {
+    const room = db.project_rooms.find(r => r.project_id === projectId || r.id === project.room_id);
+    if (room) {
+      if (!room.messages) room.messages = [];
+      room.messages.push({
+        id: uuidv4(), project_id: projectId, sender_id: 'system', sender_name: 'System',
+        content: `🎉 Project "${project.title}" marked complete! Credits distributed to all contributors.`,
+        created_at: new Date().toISOString()
+      });
+    }
+  }
+  writeDb(db);
+  return project;
+}
+
+function cancelProject(projectId) {
+  const db = readDb();
+  const project = (db.projects || []).find(p => p.id === projectId);
+  if (!project) throw new Error('Project not found');
+  if (['completed', 'cancelled'].includes(project.status)) throw new Error('Cannot cancel this project');
+  project.status = 'cancelled';
+  project.cancelled_at = new Date().toISOString();
+  if (!db.credit_transactions) db.credit_transactions = [];
+  let owner = db.users.find(u => u.id === project.owner_id);
+  if (owner) owner.points = (owner.points || 0) + project.total_credits;
+  db.credit_transactions.push({
+    id: uuidv4(), user_id: project.owner_id, amount: project.total_credits,
+    type: 'project_refund', reason: `Escrow refunded for cancelled project: ${project.title}`,
+    project_id: projectId, created_at: new Date().toISOString()
+  });
+  writeDb(db);
+  return project;
+}
+
 function saveReport(reportData) {
   const db = readDb();
   if (!db.reports) db.reports = [];
@@ -1326,5 +1560,9 @@ module.exports = {
   createMatchRequest, updateMatchRequestStatus, getMatchRequestsForUser, getMatchRequestBetween,
   updateUserProfile,
   getAdminByEmail, getAllAdmins, addAdmin, removeAdmin,
-  addModerationAction, getModerationActionsForReport, saveReport
+  addModerationAction, getModerationActionsForReport, saveReport,
+  createProject, getAllProjects, getProjectById, getUserProjects,
+  createProjectRequest, getProjectRequests, updateProjectRequestStatus,
+  getProjectRoom, addProjectChatMessage, saveProjectNotes,
+  completeProject, cancelProject
 };
