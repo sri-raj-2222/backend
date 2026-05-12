@@ -1178,10 +1178,18 @@ app.post('/api/admin/login', async (req, res) => {
     if (!email || !password) return res.status(400).json({ error: 'Email and password are required' });
 
     const admin = db.getAdminByEmail(email);
-    if (!admin) return res.status(401).json({ error: 'Invalid email or password' });
+    if (!admin) {
+      console.warn(`[Admin Login] Failed: Email not found (${email})`);
+      return res.status(401).json({ error: 'Invalid email or password' });
+    }
 
     const match = await bcrypt.compare(password, admin.password);
-    if (!match) return res.status(401).json({ error: 'Invalid email or password' });
+    if (!match) {
+      console.warn(`[Admin Login] Failed: Password mismatch for ${email}`);
+      return res.status(401).json({ error: 'Invalid email or password' });
+    }
+
+    console.log(`[Admin Login] Success: ${email}`);
 
     // Update last_login
     const dbData = db.readDb();

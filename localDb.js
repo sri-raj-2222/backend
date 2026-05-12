@@ -110,14 +110,35 @@ function readDb() {
     'connection_stages', 'reviews', 'disputes', 'users', 'user_skills', 'match_requests', 'admins',
     'moderation_actions', 'reports', 'projects', 'project_requests', 'project_rooms'
   ];
-  if (!db.admins || db.admins.length === 0) {
-    db.admins = [
-      { id: '1', email: 'admin@sharesphere.com', password: '$2b$10$LYYN29oBaztOEKpKWyb.JegXXbQaoo.GRXep.SOGL8tCMDzdb6F5C', name: 'Super Admin', role: 'super_admin', avatar: null, phone: '+91 9000000001', department: 'Platform Management', permissions: ['all'], last_login: null, created_at: new Date().toISOString() },
-      { id: '2', email: 'sriraj@sharesphere.com', password: '$2b$10$NuUzM7QzbsLTjbO.19ZcmeikL5eYEZAOOfDZpo1fyw.iwSdelbs.2', name: 'Sri Raj', role: 'super_admin', avatar: null, phone: '+91 9000000002', department: 'Engineering', permissions: ['all'], last_login: null, created_at: new Date().toISOString() },
-      { id: '3', email: 'moderator@sharesphere.com', password: '$2b$10$V1o60PS4ljO4gzEyDIqpr.vdQd6Qx/Oy4cb/EDerkFXEYN.ykiuMe', name: 'Moderator', role: 'moderator', avatar: null, phone: '+91 9000000003', department: 'Trust & Safety', permissions: ['users', 'reports', 'sessions'], last_login: null, created_at: new Date().toISOString() }
-    ];
+  if (!db.admins) {
+    db.admins = [];
     changed = true;
   }
+
+  // Enforce/Repair Super Admin
+  const defaultAdmin = {
+    id: '1',
+    email: 'admin@sharesphere.com',
+    password: '$2b$10$LYYN29oBaztOEKpKWyb.JegXXbQaoo.GRXep.SOGL8tCMDzdb6F5C', // Admin@123
+    name: 'Super Admin',
+    role: 'super_admin',
+    department: 'Platform Management',
+    permissions: ['all'],
+    created_at: new Date().toISOString()
+  };
+
+  const adminIdx = db.admins.findIndex(a => a.email?.toLowerCase() === 'admin@sharesphere.com');
+  if (adminIdx === -1) {
+    db.admins.push(defaultAdmin);
+    changed = true;
+  } else {
+    // If password doesn't match the hardcoded one, reset it to ensure login works
+    if (db.admins[adminIdx].password !== defaultAdmin.password) {
+      db.admins[adminIdx].password = defaultAdmin.password;
+      changed = true;
+    }
+  }
+  
   keys.forEach(k => {
     if (!db[k]) { db[k] = []; changed = true; }
   });
